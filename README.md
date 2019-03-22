@@ -18,7 +18,7 @@ Send and receive JSON.
 *
 *
 *
-###Goal
+### Goal
 Your objective for this project should be to do as much as you can. That is not to say as many features, but as much as you actually understand.
 
 Do not move onto the next step until you actually know what you just did and feel comfortable with what is happening. If you reach a point and are confused about what you are doing, or what you have done, ask questions, look for resources, or start over on that piece to ensure that you are comfortable with it.
