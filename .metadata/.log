@@ -76,3 +76,502 @@ Binding(COMMAND+SHIFT+T,
 
 !ENTRY org.eclipse.jface.text 2 0 2019-03-22 17:08:27.939
 !MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'
+
+!ENTRY net.resheim.eclipse.launcher.core 1 0 2019-03-22 17:20:15.529
+!MESSAGE Launching new Eclipse instance with "open -n /Applications/SpringToolSuite4.app --args -vm /Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/bin/../jre/lib/server/libjvm.dylib -os macosx -ws cocoa -arch x86_64 -showsplash -launcher /Applications/SpringToolSuite4.app/Contents/MacOS/SpringToolSuite4 -name SpringToolSuite4 --launcher.library /Applications/SpringToolSuite4.app/Contents/MacOS//../Eclipse/plugins/org.eclipse.equinox.launcher.cocoa.macosx.x86_64_1.1.900.v20180922-1751/eclipse_1801.so -startup /Applications/SpringToolSuite4.app/Contents/MacOS//../Eclipse/plugins/org.eclipse.equinox.launcher_1.5.200.v20180922-1751.jar --launcher.overrideVmargs -product org.springframework.boot.ide.branding.sts4 -keyring /Users/jessemena/.eclipse_keyring -data /Users/jessemena/SD/Java/Xtreme9Lives -vmargs -Dosgi.requiredJavaVersion=1.8 -Xms256m -Xmx1024m -XX:+UseG1GC -XX:+UseStringDeduplication -XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts -Xdock:icon=../Resources/sts4.icns -Djava.class.path=/Applications/SpringToolSuite4.app/Contents/MacOS//../Eclipse/plugins/org.eclipse.equinox.launcher_1.5.200.v20180922-1751.jar "
+
+!ENTRY org.eclipse.buildship.core 2 4 2019-03-22 17:25:16.430
+!MESSAGE Synchronize Gradle projects with workspace failed due to an unsupported configuration in the referenced Gradle build.
+!STACK 0
+org.eclipse.buildship.core.internal.UnsupportedConfigurationException: Project at '/Users/jessemena/SD/Java/EventTrackerProject/FuelMileageJPA' can't be named 'fuelMileageJPA' because it's located directly under the workspace root. If such a project is renamed, Eclipse would move the container directory. To resolve this problem, move the project out of the workspace root or configure it to have the name 'FuelMileageJPA'.
+	at org.eclipse.buildship.core.internal.workspace.DefaultWorkspaceOperations.validateProjectName(DefaultWorkspaceOperations.java:185)
+	at org.eclipse.buildship.core.internal.workspace.ProjectNameUpdater.checkProjectName(ProjectNameUpdater.java:108)
+	at org.eclipse.buildship.core.internal.workspace.ProjectNameUpdater.updateProjectName(ProjectNameUpdater.java:45)
+	at org.eclipse.buildship.core.internal.workspace.SynchronizeGradleBuildOperation.synchronizeOpenWorkspaceProject(SynchronizeGradleBuildOperation.java:160)
+	at org.eclipse.buildship.core.internal.workspace.SynchronizeGradleBuildOperation.synchronizeWorkspaceProject(SynchronizeGradleBuildOperation.java:138)
+	at org.eclipse.buildship.core.internal.workspace.SynchronizeGradleBuildOperation.synchronizeGradleProjectWithWorkspaceProject(SynchronizeGradleBuildOperation.java:128)
+	at org.eclipse.buildship.core.internal.workspace.SynchronizeGradleBuildOperation.access$000(SynchronizeGradleBuildOperation.java:48)
+	at org.eclipse.buildship.core.internal.workspace.SynchronizeGradleBuildOperation$1.run(SynchronizeGradleBuildOperation.java:86)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2295)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2317)
+	at org.eclipse.buildship.core.internal.workspace.SynchronizeGradleBuildOperation.synchronizeProjectsWithWorkspace(SynchronizeGradleBuildOperation.java:83)
+	at org.eclipse.buildship.core.internal.workspace.SynchronizeGradleBuildOperation.run(SynchronizeGradleBuildOperation.java:66)
+	at org.eclipse.buildship.core.internal.workspace.SynchronizeGradleBuildsOperation.run(SynchronizeGradleBuildsOperation.java:49)
+	at org.eclipse.buildship.core.internal.workspace.DefaultGradleBuild.synchronize(DefaultGradleBuild.java:48)
+	at org.eclipse.buildship.core.internal.DefaultGradleBuild$SynchronizeOperation.runInToolingApi(DefaultGradleBuild.java:113)
+	at org.eclipse.buildship.core.internal.operation.DefaultToolingApiOperationManager$WorkspaceRunnableAdapter.run(DefaultToolingApiOperationManager.java:57)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2295)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2322)
+	at org.eclipse.buildship.core.internal.operation.DefaultToolingApiOperationManager.run(DefaultToolingApiOperationManager.java:38)
+	at org.eclipse.buildship.core.internal.DefaultGradleBuild.synchronize(DefaultGradleBuild.java:64)
+	at org.eclipse.buildship.core.internal.workspace.SynchronizationJob.runInToolingApi(SynchronizationJob.java:68)
+	at org.eclipse.buildship.core.internal.workspace.SynchronizationJob.runInToolingApi(SynchronizationJob.java:30)
+	at org.eclipse.buildship.core.internal.operation.ToolingApiJob$1.runInToolingApi(ToolingApiJob.java:53)
+	at org.eclipse.buildship.core.internal.operation.DefaultToolingApiOperationManager$WorkspaceRunnableAdapter.run(DefaultToolingApiOperationManager.java:57)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2295)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2322)
+	at org.eclipse.buildship.core.internal.operation.DefaultToolingApiOperationManager.run(DefaultToolingApiOperationManager.java:38)
+	at org.eclipse.buildship.core.internal.operation.ToolingApiJob.run(ToolingApiJob.java:64)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.buildship.core 2 4 2019-03-22 17:26:01.376
+!MESSAGE Synchronize Gradle projects with workspace failed due to an unsupported configuration in the referenced Gradle build.
+!STACK 0
+org.eclipse.buildship.core.internal.UnsupportedConfigurationException: Project at '/Users/jessemena/SD/Java/EventTrackerProject/FuelMileageJPA' can't be named 'fuelMileageJPA' because it's located directly under the workspace root. If such a project is renamed, Eclipse would move the container directory. To resolve this problem, move the project out of the workspace root or configure it to have the name 'FuelMileageJPA'.
+	at org.eclipse.buildship.core.internal.workspace.DefaultWorkspaceOperations.validateProjectName(DefaultWorkspaceOperations.java:185)
+	at org.eclipse.buildship.core.internal.workspace.ProjectNameUpdater.checkProjectName(ProjectNameUpdater.java:108)
+	at org.eclipse.buildship.core.internal.workspace.ProjectNameUpdater.updateProjectName(ProjectNameUpdater.java:45)
+	at org.eclipse.buildship.core.internal.workspace.SynchronizeGradleBuildOperation.synchronizeOpenWorkspaceProject(SynchronizeGradleBuildOperation.java:160)
+	at org.eclipse.buildship.core.internal.workspace.SynchronizeGradleBuildOperation.synchronizeWorkspaceProject(SynchronizeGradleBuildOperation.java:138)
+	at org.eclipse.buildship.core.internal.workspace.SynchronizeGradleBuildOperation.synchronizeGradleProjectWithWorkspaceProject(SynchronizeGradleBuildOperation.java:128)
+	at org.eclipse.buildship.core.internal.workspace.SynchronizeGradleBuildOperation.access$000(SynchronizeGradleBuildOperation.java:48)
+	at org.eclipse.buildship.core.internal.workspace.SynchronizeGradleBuildOperation$1.run(SynchronizeGradleBuildOperation.java:86)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2295)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2317)
+	at org.eclipse.buildship.core.internal.workspace.SynchronizeGradleBuildOperation.synchronizeProjectsWithWorkspace(SynchronizeGradleBuildOperation.java:83)
+	at org.eclipse.buildship.core.internal.workspace.SynchronizeGradleBuildOperation.run(SynchronizeGradleBuildOperation.java:66)
+	at org.eclipse.buildship.core.internal.workspace.SynchronizeGradleBuildsOperation.run(SynchronizeGradleBuildsOperation.java:49)
+	at org.eclipse.buildship.core.internal.workspace.DefaultGradleBuild.synchronize(DefaultGradleBuild.java:48)
+	at org.eclipse.buildship.core.internal.DefaultGradleBuild$SynchronizeOperation.runInToolingApi(DefaultGradleBuild.java:113)
+	at org.eclipse.buildship.core.internal.operation.DefaultToolingApiOperationManager$WorkspaceRunnableAdapter.run(DefaultToolingApiOperationManager.java:57)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2295)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2322)
+	at org.eclipse.buildship.core.internal.operation.DefaultToolingApiOperationManager.run(DefaultToolingApiOperationManager.java:38)
+	at org.eclipse.buildship.core.internal.DefaultGradleBuild.synchronize(DefaultGradleBuild.java:64)
+	at org.eclipse.buildship.core.internal.workspace.SynchronizationJob.runInToolingApi(SynchronizationJob.java:68)
+	at org.eclipse.buildship.core.internal.workspace.SynchronizationJob.runInToolingApi(SynchronizationJob.java:30)
+	at org.eclipse.buildship.core.internal.operation.ToolingApiJob$1.runInToolingApi(ToolingApiJob.java:53)
+	at org.eclipse.buildship.core.internal.operation.DefaultToolingApiOperationManager$WorkspaceRunnableAdapter.run(DefaultToolingApiOperationManager.java:57)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2295)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2322)
+	at org.eclipse.buildship.core.internal.operation.DefaultToolingApiOperationManager.run(DefaultToolingApiOperationManager.java:38)
+	at org.eclipse.buildship.core.internal.operation.ToolingApiJob.run(ToolingApiJob.java:64)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 17:43:28.157
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 17:43:28.159
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@5c943847[org.springframework.tooling.boot.ls:1.2.1.201901241129(id=615)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 17:43:28.160
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 17:43:28.179
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 17:43:30.154
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.iDimnNMU
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 17:43:30.154
+!MESSAGE subscribing to classpath changes: sts4.classpath.iDimnNMU
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 17:43:30.155
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 17:43:30.156
+!MESSAGE subsribers = [sts4.classpath.iDimnNMU]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 17:43:30.156
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 17:43:30.337
+!MESSAGE project FuelMileageREST ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 17:43:30.338
+!MESSAGE project FuelMileageJPA ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 17:43:30.339
+!MESSAGE Preparing classpath changed notification FuelMileageREST
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 17:43:30.339
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 17:43:30.340
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 17:43:30.340
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.iDimnNMU => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 17:43:30.345
+!MESSAGE classpath=97 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 17:43:30.345
+!MESSAGE executing callback sts4.classpath.iDimnNMU FuelMileageREST false 97
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 17:43:30.369
+!MESSAGE executing callback sts4.classpath.iDimnNMU SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 17:43:30.370
+!MESSAGE Preparing classpath changed notification FuelMileageJPA
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 17:43:30.370
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 17:43:30.371
+!MESSAGE classpath=28 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 17:43:30.371
+!MESSAGE executing callback sts4.classpath.iDimnNMU FuelMileageJPA false 28
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 17:43:30.376
+!MESSAGE executing callback sts4.classpath.iDimnNMU SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 17:44:51.618
+!MESSAGE Preparing classpath changed notification FuelMileageJPA
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 17:44:51.619
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 17:44:51.620
+!MESSAGE classpath=48 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 17:44:51.621
+!MESSAGE executing callback sts4.classpath.iDimnNMU FuelMileageJPA false 48
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 17:44:51.633
+!MESSAGE executing callback sts4.classpath.iDimnNMU SUCCESS [done]
+
+!ENTRY org.eclipse.buildship.core 2 0 2019-03-22 21:02:24.509
+!MESSAGE Cannot collect dependency scope information for launch configuration FuelMileageJPA
+!STACK 1
+org.eclipse.core.runtime.CoreException: No tests found with test runner 'JUnit 5'.
+	at org.eclipse.jdt.junit.launcher.JUnitLaunchConfigurationDelegate.abort(JUnitLaunchConfigurationDelegate.java:751)
+	at org.eclipse.jdt.junit.launcher.JUnitLaunchConfigurationDelegate.evaluateTests(JUnitLaunchConfigurationDelegate.java:360)
+	at org.eclipse.buildship.core.internal.launch.SupportedLaunchConfigType$RelaxedJUnitLaunchConfigurationDelegate.evaluateTests(SupportedLaunchConfigType.java:138)
+	at org.eclipse.buildship.core.internal.launch.SupportedLaunchConfigType$2.getSourceFolders(SupportedLaunchConfigType.java:69)
+	at org.eclipse.buildship.core.internal.launch.SupportedLaunchConfigType.collectSourceFolders(SupportedLaunchConfigType.java:109)
+	at org.eclipse.buildship.core.internal.launch.LaunchConfigurationScope.from(LaunchConfigurationScope.java:56)
+	at org.eclipse.buildship.core.internal.launch.GradleClasspathProvider.filterUnusedDependencies(GradleClasspathProvider.java:70)
+	at org.eclipse.buildship.core.internal.launch.GradleClasspathProvider.computeUnresolvedClasspath(GradleClasspathProvider.java:60)
+	at org.eclipse.jdt.internal.launching.RuntimeClasspathProvider.computeUnresolvedClasspath(RuntimeClasspathProvider.java:60)
+	at org.eclipse.jdt.launching.JavaRuntime.computeUnresolvedRuntimeClasspath(JavaRuntime.java:1642)
+	at org.eclipse.jdt.launching.AbstractJavaLaunchConfigurationDelegate.getBootpathExt(AbstractJavaLaunchConfigurationDelegate.java:314)
+	at org.eclipse.jdt.launching.AbstractJavaLaunchConfigurationDelegate.getVMSpecificAttributesMap(AbstractJavaLaunchConfigurationDelegate.java:672)
+	at org.eclipse.jdt.junit.launcher.JUnitLaunchConfigurationDelegate.getVMRunnerConfiguration(JUnitLaunchConfigurationDelegate.java:193)
+	at org.eclipse.jdt.junit.launcher.JUnitLaunchConfigurationDelegate.launch(JUnitLaunchConfigurationDelegate.java:256)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:862)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:720)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1029)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1243)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.jdt.junit.core 4 101 2019-03-22 21:02:24.510
+!MESSAGE No tests found with test runner 'JUnit 5'.
+
+!ENTRY org.eclipse.buildship.core 2 0 2019-03-22 21:02:24.555
+!MESSAGE Cannot collect dependency scope information for launch configuration FuelMileageJPA
+!STACK 1
+org.eclipse.core.runtime.CoreException: No tests found with test runner 'JUnit 5'.
+	at org.eclipse.jdt.junit.launcher.JUnitLaunchConfigurationDelegate.abort(JUnitLaunchConfigurationDelegate.java:751)
+	at org.eclipse.jdt.junit.launcher.JUnitLaunchConfigurationDelegate.evaluateTests(JUnitLaunchConfigurationDelegate.java:360)
+	at org.eclipse.buildship.core.internal.launch.SupportedLaunchConfigType$RelaxedJUnitLaunchConfigurationDelegate.evaluateTests(SupportedLaunchConfigType.java:138)
+	at org.eclipse.buildship.core.internal.launch.SupportedLaunchConfigType$2.getSourceFolders(SupportedLaunchConfigType.java:69)
+	at org.eclipse.buildship.core.internal.launch.SupportedLaunchConfigType.collectSourceFolders(SupportedLaunchConfigType.java:109)
+	at org.eclipse.buildship.core.internal.launch.LaunchConfigurationScope.from(LaunchConfigurationScope.java:56)
+	at org.eclipse.buildship.core.internal.launch.GradleClasspathProvider.filterUnusedDependencies(GradleClasspathProvider.java:70)
+	at org.eclipse.buildship.core.internal.launch.GradleClasspathProvider.computeUnresolvedClasspath(GradleClasspathProvider.java:60)
+	at org.eclipse.jdt.internal.launching.RuntimeClasspathProvider.computeUnresolvedClasspath(RuntimeClasspathProvider.java:60)
+	at org.eclipse.jdt.launching.JavaRuntime.computeUnresolvedRuntimeClasspath(JavaRuntime.java:1642)
+	at org.eclipse.jdt.launching.AbstractJavaLaunchConfigurationDelegate.getClasspathAndModulepath(AbstractJavaLaunchConfigurationDelegate.java:461)
+	at org.eclipse.jdt.junit.launcher.JUnitLaunchConfigurationDelegate.getClasspathAndModulepath(JUnitLaunchConfigurationDelegate.java:626)
+	at org.eclipse.jdt.junit.launcher.JUnitLaunchConfigurationDelegate.getVMRunnerConfiguration(JUnitLaunchConfigurationDelegate.java:196)
+	at org.eclipse.jdt.junit.launcher.JUnitLaunchConfigurationDelegate.launch(JUnitLaunchConfigurationDelegate.java:256)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:862)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:720)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1029)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1243)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.jdt.junit.core 4 101 2019-03-22 21:02:24.555
+!MESSAGE No tests found with test runner 'JUnit 5'.
+
+!ENTRY org.eclipse.buildship.core 2 0 2019-03-22 21:02:24.593
+!MESSAGE Cannot collect dependency scope information for launch configuration FuelMileageJPA
+!STACK 1
+org.eclipse.core.runtime.CoreException: No tests found with test runner 'JUnit 5'.
+	at org.eclipse.jdt.junit.launcher.JUnitLaunchConfigurationDelegate.abort(JUnitLaunchConfigurationDelegate.java:751)
+	at org.eclipse.jdt.junit.launcher.JUnitLaunchConfigurationDelegate.evaluateTests(JUnitLaunchConfigurationDelegate.java:360)
+	at org.eclipse.buildship.core.internal.launch.SupportedLaunchConfigType$RelaxedJUnitLaunchConfigurationDelegate.evaluateTests(SupportedLaunchConfigType.java:138)
+	at org.eclipse.buildship.core.internal.launch.SupportedLaunchConfigType$2.getSourceFolders(SupportedLaunchConfigType.java:69)
+	at org.eclipse.buildship.core.internal.launch.SupportedLaunchConfigType.collectSourceFolders(SupportedLaunchConfigType.java:109)
+	at org.eclipse.buildship.core.internal.launch.LaunchConfigurationScope.from(LaunchConfigurationScope.java:56)
+	at org.eclipse.buildship.core.internal.launch.GradleClasspathProvider.resolveProject(GradleClasspathProvider.java:144)
+	at org.eclipse.buildship.core.internal.launch.GradleClasspathProvider.resolveProject(GradleClasspathProvider.java:128)
+	at org.eclipse.buildship.core.internal.launch.GradleClasspathProvider.resolveClasspath(GradleClasspathProvider.java:97)
+	at org.eclipse.buildship.core.internal.launch.GradleClasspathProvider.resolveOther(GradleClasspathProvider.java:117)
+	at org.eclipse.buildship.core.internal.launch.GradleClasspathProvider.resolveClasspath(GradleClasspathProvider.java:94)
+	at org.eclipse.jdt.internal.launching.RuntimeClasspathProvider.resolveClasspath(RuntimeClasspathProvider.java:68)
+	at org.eclipse.jdt.launching.JavaRuntime.resolveRuntimeClasspath(JavaRuntime.java:1690)
+	at org.eclipse.jdt.launching.AbstractJavaLaunchConfigurationDelegate.getClasspathAndModulepath(AbstractJavaLaunchConfigurationDelegate.java:462)
+	at org.eclipse.jdt.junit.launcher.JUnitLaunchConfigurationDelegate.getClasspathAndModulepath(JUnitLaunchConfigurationDelegate.java:626)
+	at org.eclipse.jdt.junit.launcher.JUnitLaunchConfigurationDelegate.getVMRunnerConfiguration(JUnitLaunchConfigurationDelegate.java:196)
+	at org.eclipse.jdt.junit.launcher.JUnitLaunchConfigurationDelegate.launch(JUnitLaunchConfigurationDelegate.java:256)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:862)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:720)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1029)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1243)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.jdt.junit.core 4 101 2019-03-22 21:02:24.593
+!MESSAGE No tests found with test runner 'JUnit 5'.
+
+!ENTRY org.eclipse.buildship.core 2 0 2019-03-22 21:02:24.629
+!MESSAGE Cannot collect dependency scope information for launch configuration FuelMileageJPA
+!STACK 1
+org.eclipse.core.runtime.CoreException: No tests found with test runner 'JUnit 5'.
+	at org.eclipse.jdt.junit.launcher.JUnitLaunchConfigurationDelegate.abort(JUnitLaunchConfigurationDelegate.java:751)
+	at org.eclipse.jdt.junit.launcher.JUnitLaunchConfigurationDelegate.evaluateTests(JUnitLaunchConfigurationDelegate.java:360)
+	at org.eclipse.buildship.core.internal.launch.SupportedLaunchConfigType$RelaxedJUnitLaunchConfigurationDelegate.evaluateTests(SupportedLaunchConfigType.java:138)
+	at org.eclipse.buildship.core.internal.launch.SupportedLaunchConfigType$2.getSourceFolders(SupportedLaunchConfigType.java:69)
+	at org.eclipse.buildship.core.internal.launch.SupportedLaunchConfigType.collectSourceFolders(SupportedLaunchConfigType.java:109)
+	at org.eclipse.buildship.core.internal.launch.LaunchConfigurationScope.from(LaunchConfigurationScope.java:56)
+	at org.eclipse.buildship.core.internal.workspace.GradleClasspathContainerRuntimeClasspathEntryResolver.resolveRuntimeClasspathEntry(GradleClasspathContainerRuntimeClasspathEntryResolver.java:46)
+	at org.eclipse.jdt.internal.launching.RuntimeClasspathEntryResolver.resolveRuntimeClasspathEntry(RuntimeClasspathEntryResolver.java:49)
+	at org.eclipse.jdt.launching.JavaRuntime.resolveRuntimeClasspathEntry(JavaRuntime.java:1266)
+	at org.eclipse.buildship.core.internal.launch.GradleClasspathProvider.resolveClasspath(GradleClasspathProvider.java:100)
+	at org.eclipse.buildship.core.internal.launch.GradleClasspathProvider.resolveOther(GradleClasspathProvider.java:117)
+	at org.eclipse.buildship.core.internal.launch.GradleClasspathProvider.resolveClasspath(GradleClasspathProvider.java:94)
+	at org.eclipse.jdt.internal.launching.RuntimeClasspathProvider.resolveClasspath(RuntimeClasspathProvider.java:68)
+	at org.eclipse.jdt.launching.JavaRuntime.resolveRuntimeClasspath(JavaRuntime.java:1690)
+	at org.eclipse.jdt.launching.AbstractJavaLaunchConfigurationDelegate.getClasspathAndModulepath(AbstractJavaLaunchConfigurationDelegate.java:462)
+	at org.eclipse.jdt.junit.launcher.JUnitLaunchConfigurationDelegate.getClasspathAndModulepath(JUnitLaunchConfigurationDelegate.java:626)
+	at org.eclipse.jdt.junit.launcher.JUnitLaunchConfigurationDelegate.getVMRunnerConfiguration(JUnitLaunchConfigurationDelegate.java:196)
+	at org.eclipse.jdt.junit.launcher.JUnitLaunchConfigurationDelegate.launch(JUnitLaunchConfigurationDelegate.java:256)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:862)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:720)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1029)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1243)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.jdt.junit.core 4 101 2019-03-22 21:02:24.629
+!MESSAGE No tests found with test runner 'JUnit 5'.
+
+!ENTRY org.eclipse.buildship.core 2 0 2019-03-22 21:02:24.708
+!MESSAGE Cannot collect dependency scope information for launch configuration FuelMileageJPA
+!STACK 1
+org.eclipse.core.runtime.CoreException: No tests found with test runner 'JUnit 5'.
+	at org.eclipse.jdt.junit.launcher.JUnitLaunchConfigurationDelegate.abort(JUnitLaunchConfigurationDelegate.java:751)
+	at org.eclipse.jdt.junit.launcher.JUnitLaunchConfigurationDelegate.evaluateTests(JUnitLaunchConfigurationDelegate.java:360)
+	at org.eclipse.buildship.core.internal.launch.SupportedLaunchConfigType$RelaxedJUnitLaunchConfigurationDelegate.evaluateTests(SupportedLaunchConfigType.java:138)
+	at org.eclipse.buildship.core.internal.launch.SupportedLaunchConfigType$2.getSourceFolders(SupportedLaunchConfigType.java:69)
+	at org.eclipse.buildship.core.internal.launch.SupportedLaunchConfigType.collectSourceFolders(SupportedLaunchConfigType.java:109)
+	at org.eclipse.buildship.core.internal.launch.LaunchConfigurationScope.from(LaunchConfigurationScope.java:56)
+	at org.eclipse.buildship.core.internal.launch.GradleClasspathProvider.filterUnusedDependencies(GradleClasspathProvider.java:70)
+	at org.eclipse.buildship.core.internal.launch.GradleClasspathProvider.computeUnresolvedClasspath(GradleClasspathProvider.java:60)
+	at org.eclipse.jdt.internal.launching.RuntimeClasspathProvider.computeUnresolvedClasspath(RuntimeClasspathProvider.java:60)
+	at org.eclipse.jdt.launching.JavaRuntime.computeUnresolvedRuntimeClasspath(JavaRuntime.java:1642)
+	at org.eclipse.jdt.launching.AbstractJavaLaunchConfigurationDelegate.getBootpathExt(AbstractJavaLaunchConfigurationDelegate.java:314)
+	at org.eclipse.jdt.launching.AbstractJavaLaunchConfigurationDelegate.getBootpath(AbstractJavaLaunchConfigurationDelegate.java:259)
+	at org.eclipse.jdt.junit.launcher.JUnitLaunchConfigurationDelegate.getVMRunnerConfiguration(JUnitLaunchConfigurationDelegate.java:226)
+	at org.eclipse.jdt.junit.launcher.JUnitLaunchConfigurationDelegate.launch(JUnitLaunchConfigurationDelegate.java:256)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:862)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:720)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1029)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1243)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.jdt.junit.core 4 101 2019-03-22 21:02:24.708
+!MESSAGE No tests found with test runner 'JUnit 5'.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:06:02.638
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.iDimnNMU
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:06:02.639
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.iDimnNMU
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:06:02.639
+!MESSAGE subsribers = null
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:06:02.640
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.iDimnNMU => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:06:16.348
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.lYIoffng
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:06:16.348
+!MESSAGE subscribing to classpath changes: sts4.classpath.lYIoffng
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:06:16.349
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:06:16.349
+!MESSAGE subsribers = [sts4.classpath.lYIoffng]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:06:16.349
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:06:16.536
+!MESSAGE project FuelMileageREST ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:06:16.537
+!MESSAGE project FuelMileageJPA ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:06:16.537
+!MESSAGE Preparing classpath changed notification FuelMileageREST
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:06:16.537
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:06:16.538
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:06:16.538
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.lYIoffng => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:06:16.540
+!MESSAGE classpath=97 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:06:16.540
+!MESSAGE executing callback sts4.classpath.lYIoffng FuelMileageREST false 97
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:06:16.566
+!MESSAGE executing callback sts4.classpath.lYIoffng SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:06:16.567
+!MESSAGE Preparing classpath changed notification FuelMileageJPA
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:06:16.567
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:06:16.569
+!MESSAGE classpath=48 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:06:16.569
+!MESSAGE executing callback sts4.classpath.lYIoffng FuelMileageJPA false 48
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:06:16.575
+!MESSAGE executing callback sts4.classpath.lYIoffng SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:09:44.427
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.lYIoffng
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:09:44.428
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.lYIoffng
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:09:44.428
+!MESSAGE subsribers = null
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:09:44.429
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.lYIoffng => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:10:34.505
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.PiaauAif
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:10:34.505
+!MESSAGE subscribing to classpath changes: sts4.classpath.PiaauAif
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:10:34.505
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:10:34.506
+!MESSAGE subsribers = [sts4.classpath.PiaauAif]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:10:34.506
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:10:34.506
+!MESSAGE project FuelMileageJPA ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:10:34.507
+!MESSAGE project FuelMileageREST ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:10:34.507
+!MESSAGE Preparing classpath changed notification FuelMileageJPA
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:10:34.507
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:10:34.507
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:10:34.507
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.PiaauAif => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:10:34.508
+!MESSAGE classpath=48 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:10:34.509
+!MESSAGE executing callback sts4.classpath.PiaauAif FuelMileageJPA false 48
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:10:34.535
+!MESSAGE executing callback sts4.classpath.PiaauAif SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:10:34.535
+!MESSAGE Preparing classpath changed notification FuelMileageREST
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:10:34.535
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:10:34.537
+!MESSAGE classpath=97 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:10:34.537
+!MESSAGE executing callback sts4.classpath.PiaauAif FuelMileageREST false 97
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:10:34.550
+!MESSAGE executing callback sts4.classpath.PiaauAif SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:14:01.923
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.PiaauAif
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:14:01.923
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.PiaauAif
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:14:01.923
+!MESSAGE subsribers = null
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:14:01.923
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.PiaauAif => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:14:26.479
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.ValVIZRt
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:14:26.479
+!MESSAGE subscribing to classpath changes: sts4.classpath.ValVIZRt
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:14:26.480
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:14:26.480
+!MESSAGE subsribers = [sts4.classpath.ValVIZRt]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:14:26.480
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:14:26.481
+!MESSAGE project FuelMileageJPA ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:14:26.481
+!MESSAGE project FuelMileageREST ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:14:26.481
+!MESSAGE Preparing classpath changed notification FuelMileageJPA
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:14:26.481
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:14:26.482
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:14:26.482
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.ValVIZRt => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:14:26.483
+!MESSAGE classpath=48 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:14:26.483
+!MESSAGE executing callback sts4.classpath.ValVIZRt FuelMileageJPA false 48
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:14:26.508
+!MESSAGE executing callback sts4.classpath.ValVIZRt SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:14:26.508
+!MESSAGE Preparing classpath changed notification FuelMileageREST
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:14:26.508
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:14:26.510
+!MESSAGE classpath=97 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:14:26.510
+!MESSAGE executing callback sts4.classpath.ValVIZRt FuelMileageREST false 97
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-22 21:14:26.523
+!MESSAGE executing callback sts4.classpath.ValVIZRt SUCCESS [done]
