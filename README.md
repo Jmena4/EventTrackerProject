@@ -40,12 +40,12 @@ To test the api mapping copy the top link to the AWS-EC2 site. Next, in a Postma
 ### Fuel RESTFul API:
 | Return Type | Route | Functionality|
 | --------: | ------: |----------: |
-| List<Fuel> | GET api/fuels | Gets all fuels |
-| Fuel | GET api/fuels/{id}	|Gets one fuel entry by id |
-| Fuel | POST api/fuels |	Creates a new fuel entry |
-| Fuel | PUT api/fuels/{id }| Replace a fuel entry by id |
-| Fuel | PATCH api/fuels/{id} |	Update a fuel entry by id |
-| Boolean | DELETE api/fuels/{id} |	Deletes a fuel entry by id |
+|List<Fuel> | GET api/fuels | Gets all fuels |
+|Fuel | GET api/fuels/{id}	|Gets one fuel entry by id |
+|Fuel | POST api/fuels |	Creates a new fuel entry |
+|Fuel | PUT api/fuels/{id }| Replace a fuel entry by id |
+|Fuel | PATCH api/fuels/{id} |	Update a fuel entry by id |
+|Boolean | DELETE api/fuels/{id} |	Deletes a fuel entry by id |
   
 
 ### Vehicle RESTFul API:
