@@ -37,6 +37,13 @@ Supplemental tables, mappings, and controller routes for nested CRUD.
 ### Postman Operations
 
 ### Fuel RESTFul API:
+|Return Type|Route|Functionality
+|List<Fuel>	GET api/fuels	Gets all fuels 
+|Fuel	GET api/fuels/{id}	Gets one fuel entry by id
+|Fuel	POST api/fuels	Creates a new fuel entry
+|Fuel	PUT api/fuels/{id}	Replace a fuel entry by id
+|Fuel	PATCH api/fuels/{id}	Update a fuel entry by id
+|Boolean	DELETE api/fuels/{id}	Deletes a fuel entry by id
 ![Fuel RESTFul API](https://github.com/Jmena4/EventTrackerProject/blob/master/postman_fuel_image.png)
 ### Vehicle RESTFul API:
 ![Vehicle RESTFul API](https://github.com/Jmena4/EventTrackerProject/blob/master/postman_vehicle_image.png)
