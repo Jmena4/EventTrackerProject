@@ -47,7 +47,7 @@ To test the api mapping copy the top link to the AWS-EC2 site. Next, in a Postma
 | Fuel | PATCH api/fuels/{id} |	Update a fuel entry by id |
 | Boolean | DELETE api/fuels/{id} |	Deletes a fuel entry by id |
 
-{
+`{
         "id": 1,
         "date": "2016-06-30",
         "gallons": 5.18,
@@ -62,7 +62,7 @@ To test the api mapping copy the top link to the AWS-EC2 site. Next, in a Postma
             "make": "Nissan",
             "model": "Xterra Pro-4x"
         }
-    } 
+    } `
     
 
 ### Vehicle RESTFul API:
@@ -75,5 +75,11 @@ To test the api mapping copy the top link to the AWS-EC2 site. Next, in a Postma
 | Vehicle |	PATCH api/vehicles/{id} |	Update a vehicle entry by id |
 | Boolean |	DELETE api/vehicles/{id} |	Deletes a vehicle entry by id |
   
-
+ `{
+        "id": 1,
+        "vin": "xter",
+        "year": 2012,
+        "make": "Nissan",
+        "model": "Xterra Pro-4x"
+    }`
 
