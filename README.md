@@ -35,6 +35,7 @@ Supplemental tables, mappings, and controller routes for nested CRUD.
 
 
 ### Postman Operations
+To test the api mapping copy the top link to the AWS-EC2 site. Next, in a Postman API Development Environment copy the the link and append the the proper GET method and the appropriate api path. For Example, a GET reference would look similar to  http://13.59.166.203:8080/FuelMileageREST/api/fuels to retrieve a complete list of all the entries. Below are all the programmed access paths. 
 
 ### Fuel RESTFul API:
 | Return Type | Route | Functionality|
