@@ -36,7 +36,8 @@ Supplemental tables, mappings, and controller routes for nested CRUD.
 
 ### Postman Operations
 
+Fuel RESTFul API:
 ![Fuel RESTFul API](https://github.com/Jmena4/EventTrackerProject/blob/master/postman_fuel_image.png)
-
+Vehicle RESTFul API:
 ![Vehicle RESTFul API](https://github.com/Jmena4/EventTrackerProject/blob/master/postman_vehicle_image.png)
 
