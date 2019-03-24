@@ -46,7 +46,7 @@ Supplemental tables, mappings, and controller routes for nested CRUD.
 | Fuel |	PATCH api/fuels/{id} |	Update a fuel entry by id |
 | Boolean |	DELETE api/fuels/{id} |	Deletes a fuel entry by id |
   
-![Fuel RESTFul API] (https://github.com/Jmena4/EventTrackerProject/blob/master/postman_fuel_image.png)
+
 ### Vehicle RESTFul API:
 | Return Type	| Route	| Functionality |
 | --------: | ------: |----------: |
@@ -57,5 +57,5 @@ Supplemental tables, mappings, and controller routes for nested CRUD.
 | Vehicle |	PATCH api/vehicles/{id} |	Update a vehicle entry by id |
 | Boolean |	DELETE api/vehicles/{id} |	Deletes a vehicle entry by id |
   
-![Vehicle RESTFul API] (https://github.com/Jmena4/EventTrackerProject/blob/master/postman_vehicle_image.png)
+
 
