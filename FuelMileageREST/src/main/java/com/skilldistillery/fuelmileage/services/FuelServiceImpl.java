@@ -21,8 +21,9 @@ public class FuelServiceImpl implements FuelService {
 	}
 
 	@Override
-	public Fuel findById(int id) {
-		return fuelRepo.findById(id);
+	public Optional<Fuel> showFuelById(int id) {
+		Optional<Fuel> showFuel =fuelRepo.findById(id);
+		return showFuel;
 	}
 
 	@Override
@@ -33,7 +34,18 @@ public class FuelServiceImpl implements FuelService {
 
 	@Override
 	public Fuel updateFuelById(int id, Fuel fuel) {
-		// TODO Auto-generated method stub
+		Optional<Fuel> opt = fuelRepo.findById(id);
+		if (opt.isPresent()) {
+			Fuel managedFuel = opt.get();
+			managedFuel.setGallons(fuel.getGallons());
+			managedFuel.setPricePerGallon(fuel.getPricePerGallon());
+			managedFuel.setTotalPrice(fuel.getTotalPrice());
+			managedFuel.setEstimatedMiles(fuel.getEstimatedMiles());
+			managedFuel.setOdometerReading(fuel.getOdometerReading());
+			managedFuel.setVehicle(fuel.getVehicle());
+			fuelRepo.saveAndFlush(managedFuel);
+			return managedFuel;
+		}
 		return null;
 	}
 
@@ -44,10 +56,12 @@ public class FuelServiceImpl implements FuelService {
 	}
 
 	@Override
-	public Boolean deleteFuelById(int fuelId, Fuel fuel) {
+	public Boolean deleteById(int fuelId) {
 		boolean deleted = false;
-		
-		 fuelRepo.deleteById(fuelId);
-		return null;
+		if (fuelRepo.existsById(fuelId)) {
+			fuelRepo.deleteById(fuelId);
+			deleted = true;
+		}
+		return deleted;
 	}
 }

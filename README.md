@@ -12,6 +12,7 @@ You are embarking on a weekend project that you may or may not come back to afte
 * Use Spring REST annotations.
 * Use Spring Data JPA to perform all CRUD operations.
 * Send and receive JSON.
+
 ### Technologies
 * Spring Boot/Tool Suite
 * RESTFul API
@@ -30,3 +31,6 @@ Supplemental tables, mappings, and controller routes for nested CRUD.
 
 ### AWS-EC2 Connection:
 ---
+
+### Postman Operations
+![Landing Screen](postman_vehicle_image)

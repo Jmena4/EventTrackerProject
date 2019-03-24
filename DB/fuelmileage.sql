@@ -21,8 +21,8 @@ USE `fuelmileagedb` ;
 DROP TABLE IF EXISTS `vehicle` ;
 
 CREATE TABLE IF NOT EXISTS `vehicle` (
-  `id` INT NOT NULL,
-  `vin` VARCHAR(65) NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `vin` VARCHAR(65) NULL,
   `year` INT NULL,
   `make` VARCHAR(100) NULL,
   `model` VARCHAR(100) NULL,
