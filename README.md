@@ -30,6 +30,7 @@ JUnit tests for your repository, service, and controller layers.
 Supplemental tables, mappings, and controller routes for nested CRUD.
 
 ### AWS-EC2 Connection:
+http://13.59.166.203:8080/FuelMileageREST/
 ---
 
 
