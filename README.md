@@ -35,7 +35,7 @@ Supplemental tables, mappings, and controller routes for nested CRUD.
 
 
 ### Postman Operations
-To test the api mapping copy the top link to the AWS-EC2 site. Next, in a Postman API Development Environment copy the the link and append the the proper GET method and the appropriate api path. For Example, a GET reference would look similar to  http://13.59.166.203:8080/FuelMileageREST/api/fuels to retrieve a complete list of all the entries. Below are all the programmed access paths. 
+To test the api mapping copy the top link to the AWS-EC2 site. Next, in a Postman API Development Environment copy the the link and append the the proper GET method and the appropriate api path. For Example, a GET reference would look similar to  http://13.59.166.203:8080/FuelMileageREST/api/fuels to retrieve a complete list of all the entries. Below are all the accessable api paths. 
 
 ### Fuel RESTFul API:
 | Return Type | Route | Functionality|
@@ -46,7 +46,23 @@ To test the api mapping copy the top link to the AWS-EC2 site. Next, in a Postma
 | Fuel | PUT api/fuels/{id }| Replace a fuel entry by id |
 | Fuel | PATCH api/fuels/{id} |	Update a fuel entry by id |
 | Boolean | DELETE api/fuels/{id} |	Deletes a fuel entry by id |
-  
+
+```{
+        "id": 1,
+        "date": "2016-06-30",
+        "gallons": 5.18,
+        "pricePerGallon": 1.939,
+        "totalPrice": 10.04,
+        "estimatedMiles": 169,
+        "odometerReading": 1,
+        "vehicle": {
+            "id": 1,
+            "vin": "xter",
+            "year": 2012,
+            "make": "Nissan",
+            "model": "Xterra Pro-4x"
+        }
+    }```
 
 ### Vehicle RESTFul API:
 | Return Type	| Route	| Functionality |
