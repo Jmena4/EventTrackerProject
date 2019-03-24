@@ -1,6 +1,7 @@
 package com.skilldistillery.fuelmileage.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.skilldistillery.fuelmileage.entities.Fuel;
 
@@ -8,7 +9,7 @@ public interface FuelService {
 	
 	public List<Fuel> findAll();
 
-	public Fuel findById(int id);
+	public Optional<Fuel> showFuelById(int id);
 	
 	public Fuel createFuelObject(Fuel fuel);
 
@@ -16,6 +17,6 @@ public interface FuelService {
 
 	public Fuel replaceFuelById(int id, Fuel fuel);
 
-	public Boolean deleteFuelById(int id, Fuel fuel);
+	public Boolean deleteById(int id);
 
 }

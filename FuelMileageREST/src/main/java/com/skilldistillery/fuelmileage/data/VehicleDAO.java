@@ -1,6 +1,5 @@
 package com.skilldistillery.fuelmileage.data;
 
-public interface FuelDAO {
-	
+public interface VehicleDAO {
 
 }

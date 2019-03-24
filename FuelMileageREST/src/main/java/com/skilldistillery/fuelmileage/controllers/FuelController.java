@@ -1,11 +1,13 @@
 package com.skilldistillery.fuelmileage.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,7 +26,7 @@ public class FuelController {
 	@Autowired
 	private FuelService fuelService;
 
-	@GetMapping("ping")	
+	@GetMapping("ping")
 	public String ping() {
 		return "pong";
 	}
@@ -34,9 +36,9 @@ public class FuelController {
 		return fuelService.findAll();
 	}
 
-	@GetMapping("fuels/{id}")
-	public Fuel show(@PathVariable("id") Integer id) {
-		return fuelService.findById(id);
+	@GetMapping("fuels/{fid}")
+	public Optional<Fuel> show(@PathVariable("fid") Integer id) {
+		return fuelService.showFuelById(id);
 	}
 
 	@PostMapping("fuels")
@@ -49,10 +51,23 @@ public class FuelController {
 
 		return fuel;
 	}
-	
-	@PutMapping("fuels/{id}")
-	public void updateFuel(@PathVariable("id") Integer id, @RequestBody Fuel fuel, HttpServletRequest request, HttpServletResponse response) {
-		
-		
+
+	@PutMapping("fuels/{fid}")
+	public Fuel updateFuel(@PathVariable("fid") Integer id, @RequestBody Fuel fuel, HttpServletRequest request,
+			HttpServletResponse response) {
+		fuel = fuelService.updateFuelById(id, fuel);
+		if (fuel == null) {
+			response.setStatus(404);
+		}
+		return fuel;
+	}
+
+	@DeleteMapping("fuels/{id}")
+	public void deleteFuel(@PathVariable("id") Integer id, HttpServletRequest request, HttpServletResponse response) {
+		if (fuelService.deleteById(id)) {
+			response.setStatus(204);
+		} else {
+			response.setStatus(404);
+		}
 	}
 }
