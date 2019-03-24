@@ -16,6 +16,7 @@
 * Spring Boot/Tool Suite
 * RESTFul API
 * JPA Repositories
+* HttpServletSessio: Request and Response
 * MySQL Database
 * Java SE/EE
 * Gradle
@@ -46,7 +47,7 @@ To test the api mapping copy the top link to the AWS-EC2 site. Next, in a Postma
 | Fuel | PATCH api/fuels/{id} |	Update a fuel entry by id |
 | Boolean | DELETE api/fuels/{id} |	Deletes a fuel entry by id |
 
-* Fuel Entry JSON example. When performing a POST or PUT, MySQL will auto-generate the Fuel Entry Id and Date TimeStamp. DO NOT INCLUDE AN ID OR DATE IN EITHER THE POST OR PUT JSON.
+* JSON Fuel Entry example. When performing a POST or PUT, MySQL will auto-generate the Fuel Entry Id and Date TimeStamp. DO NOT INCLUDE AN ID OR DATE IN EITHER THE POST OR PUT JSON.
 * `{
         "id": 1,
         "date": "2016-06-30",
@@ -75,7 +76,7 @@ To test the api mapping copy the top link to the AWS-EC2 site. Next, in a Postma
 | Vehicle |	PATCH api/vehicles/{id} |	Update a vehicle entry by id |
 | Boolean |	DELETE api/vehicles/{id} |	Deletes a vehicle entry by id |
  
- * Vehicle Entry JSON example. When performing a POST or PUT, MySQL will auto-generate the Vehicle Entry Id. DO NOT INCLUDE AN ID IN EITHER THE POST OR PUT JSON.
+ *  JSON Vehicle Entry example. When performing a POST or PUT, MySQL will auto-generate the Vehicle Entry Id. DO NOT INCLUDE AN ID IN EITHER THE POST OR PUT JSON.
  * `{
         "id": 1,
         "vin": "xter",
