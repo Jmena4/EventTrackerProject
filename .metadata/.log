@@ -9053,3 +9053,231 @@ java.lang.NoSuchMethodError: org.springframework.beans.factory.support.BeanDefin
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-23 17:58:49.176
 !MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.eOTytZUR => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-23 21:07:01.555
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.zRDePxzn
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-23 21:07:01.557
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.zRDePxzn
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-23 21:07:01.557
+!MESSAGE subsribers = null
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-23 21:07:01.558
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.zRDePxzn => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-23 21:07:05.325
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.pykDCWpc
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-23 21:07:05.326
+!MESSAGE subscribing to classpath changes: sts4.classpath.pykDCWpc
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-23 21:07:05.326
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-23 21:07:05.327
+!MESSAGE subsribers = [sts4.classpath.pykDCWpc]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-23 21:07:05.327
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-23 21:07:05.329
+!MESSAGE project FuelMileageREST ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-23 21:07:05.329
+!MESSAGE project FuelMileageJPA ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-23 21:07:05.329
+!MESSAGE Preparing classpath changed notification FuelMileageREST
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-23 21:07:05.330
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-23 21:07:05.330
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-23 21:07:05.330
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.pykDCWpc => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-23 21:07:05.338
+!MESSAGE classpath=116 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-23 21:07:05.338
+!MESSAGE executing callback sts4.classpath.pykDCWpc FuelMileageREST false 116
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-23 21:07:05.369
+!MESSAGE executing callback sts4.classpath.pykDCWpc SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-23 21:07:05.369
+!MESSAGE Preparing classpath changed notification FuelMileageJPA
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-23 21:07:05.369
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-23 21:07:05.373
+!MESSAGE classpath=48 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-23 21:07:05.373
+!MESSAGE executing callback sts4.classpath.pykDCWpc FuelMileageJPA false 48
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-23 21:07:05.382
+!MESSAGE executing callback sts4.classpath.pykDCWpc SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-24 09:13:54.555
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.pykDCWpc
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-24 09:13:54.556
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.pykDCWpc
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-24 09:13:54.556
+!MESSAGE subsribers = null
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-24 09:13:54.557
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.pykDCWpc => OK
+!SESSION 2019-03-24 09:33:39.178 -----------------------------------------------
+eclipse.buildId=4.1.1.201901241133-RELEASE
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4 -keyring /Users/jessemena/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.springframework.boot.ide.branding.sts4 -keyring /Users/jessemena/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2019-03-24 09:33:51.610
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.jface 2 0 2019-03-24 09:33:52.421
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-03-24 09:33:52.421
+!MESSAGE A conflict occurred for ALT+SHIFT+D R:
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.debug,Debug on Server,
+		Debug the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6418075c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.debug,Debug RAP Application,
+		Debug RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@f9919a2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-03-24 09:33:52.421
+!MESSAGE A conflict occurred for ALT+SHIFT+X R:
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.run,Run on Server,
+		Run the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@530ee11a,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.run,Run RAP Application,
+		Run RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@54d116d5,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-03-24 09:33:52.421
+!MESSAGE A conflict occurred for COMMAND+SHIFT+T:
+Binding(COMMAND+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7057d9f4,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(COMMAND+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@37c49a55,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.mylyn.tasks.core 4 0 2019-03-24 09:33:53.137
+!MESSAGE Unexpected error while loading repository template extensions
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2019-03-24 09:33:53.137
+!MESSAGE Could not load repository template extension contributed by 'org.eclipse.mylyn.bugzilla.ide' with connectorKind 'bugzilla'
+
+!ENTRY org.eclipse.jface.text 2 0 2019-03-24 09:33:54.234
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-24 09:33:58.195
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-24 09:33:58.196
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@5d4f0fd5[org.springframework.tooling.boot.ls:1.2.1.201901241129(id=615)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-24 09:33:58.197
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-24 09:33:58.240
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-24 09:34:01.366
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.FhgdLYcU
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-24 09:34:01.366
+!MESSAGE subscribing to classpath changes: sts4.classpath.FhgdLYcU
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-24 09:34:01.367
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-24 09:34:01.368
+!MESSAGE subsribers = [sts4.classpath.FhgdLYcU]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-24 09:34:01.368
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-24 09:34:01.371
+!MESSAGE project FuelMileageREST ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-24 09:34:01.372
+!MESSAGE project FuelMileageJPA ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-24 09:34:01.372
+!MESSAGE Preparing classpath changed notification FuelMileageREST
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-24 09:34:01.372
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-24 09:34:01.372
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-24 09:34:01.373
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.FhgdLYcU => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-24 09:34:01.381
+!MESSAGE classpath=116 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-24 09:34:01.382
+!MESSAGE executing callback sts4.classpath.FhgdLYcU FuelMileageREST false 116
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-24 09:34:01.421
+!MESSAGE executing callback sts4.classpath.FhgdLYcU SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-24 09:34:01.422
+!MESSAGE Preparing classpath changed notification FuelMileageJPA
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-24 09:34:01.423
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-24 09:34:01.429
+!MESSAGE classpath=48 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-24 09:34:01.429
+!MESSAGE executing callback sts4.classpath.FhgdLYcU FuelMileageJPA false 48
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-24 09:34:01.439
+!MESSAGE executing callback sts4.classpath.FhgdLYcU SUCCESS [done]
+
+!ENTRY net.resheim.eclipse.launcher.core 1 0 2019-03-24 09:40:23.725
+!MESSAGE Launching new Eclipse instance with "open -n /Applications/SpringToolSuite4.app --args -vm /Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/bin/../jre/lib/server/libjvm.dylib -os macosx -ws cocoa -arch x86_64 -showsplash -launcher /Applications/SpringToolSuite4.app/Contents/MacOS/SpringToolSuite4 -name SpringToolSuite4 --launcher.library /Applications/SpringToolSuite4.app/Contents/MacOS//../Eclipse/plugins/org.eclipse.equinox.launcher.cocoa.macosx.x86_64_1.1.900.v20180922-1751/eclipse_1801.so -startup /Applications/SpringToolSuite4.app/Contents/MacOS//../Eclipse/plugins/org.eclipse.equinox.launcher_1.5.200.v20180922-1751.jar --launcher.overrideVmargs -product org.springframework.boot.ide.branding.sts4 -keyring /Users/jessemena/.eclipse_keyring -data /Users/jessemena/SD/Java/Xtreme9Lives -vmargs -Dosgi.requiredJavaVersion=1.8 -Xms256m -Xmx1024m -XX:+UseG1GC -XX:+UseStringDeduplication -XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts -Xdock:icon=../Resources/sts4.icns -Djava.class.path=/Applications/SpringToolSuite4.app/Contents/MacOS//../Eclipse/plugins/org.eclipse.equinox.launcher_1.5.200.v20180922-1751.jar "
