@@ -16,7 +16,7 @@
 * Spring Boot/Tool Suite
 * RESTFul API
 * JPA Repositories
-* HttpServletSessio: Request and Response
+* HttpServletSession: Request and Response
 * MySQL Database
 * Java SE/EE
 * Gradle
