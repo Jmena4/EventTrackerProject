@@ -15,7 +15,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
 @Table(name = "fuel")
-public class Fuel {
+public class FuelTracker {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -155,7 +155,7 @@ public class Fuel {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Fuel other = (Fuel) obj;
+		FuelTracker other = (FuelTracker) obj;
 		if (date == null) {
 			if (other.date != null)
 				return false;
@@ -193,7 +193,7 @@ public class Fuel {
 		return true;
 	}
 
-	public Fuel() {
+	public FuelTracker() {
 		super();
 	}
 

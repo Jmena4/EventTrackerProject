@@ -1,8 +1,6 @@
 package com.skilldistillery.fuelmileage.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -14,14 +12,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import com.skilldistillery.fuelmileage.entities.Fuel;
+import com.skilldistillery.fuelmileage.entities.FuelTracker;
 
 @DisplayName("Fuel Entity Tests")
-class FuelTest {
+class FuelTrackerTest {
 
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private Fuel fuel;
+	private FuelTracker fuelTracker;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -37,24 +35,24 @@ class FuelTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		fuel = em.find(Fuel.class, 1);
+		fuelTracker = em.find(FuelTracker.class, 1);
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
 		em.close();
-		fuel = null;
+		fuelTracker = null;
 	}
 
 	@Test
 	void test_fuel_mapping() {
-		assertEquals("2016-06-30", fuel.getDate().toString());
-		assertEquals(5.18, fuel.getGallons().doubleValue());
-		assertEquals(1.939, fuel.getPricePerGallon().doubleValue());
-		assertEquals(10.04, fuel.getTotalPrice().doubleValue());
-		assertEquals(169, fuel.getEstimatedMiles().intValue());
-		assertEquals(1, fuel.getOdometerReading());
-		assertEquals(1, fuel.getVehicle().getId());
+		assertEquals("2016-06-30", fuelTracker.getDate().toString());
+		assertEquals(5.18, fuelTracker.getGallons().doubleValue());
+		assertEquals(1.939, fuelTracker.getPricePerGallon().doubleValue());
+		assertEquals(10.04, fuelTracker.getTotalPrice().doubleValue());
+		assertEquals(169, fuelTracker.getEstimatedMiles().intValue());
+		assertEquals(1, fuelTracker.getOdometerReading());
+		assertEquals(1, fuelTracker.getVehicle().getId());
 	}
 
 }

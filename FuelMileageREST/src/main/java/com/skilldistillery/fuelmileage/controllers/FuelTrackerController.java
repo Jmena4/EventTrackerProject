@@ -16,55 +16,51 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.skilldistillery.fuelmileage.entities.Fuel;
-import com.skilldistillery.fuelmileage.services.FuelService;
+import com.skilldistillery.fuelmileage.entities.FuelTracker;
+import com.skilldistillery.fuelmileage.services.FuelTrackerService;
 
 @RestController
 @RequestMapping("api")
-public class FuelController {
+public class FuelTrackerController {
 
 	@Autowired
-	private FuelService fuelService;
+	private FuelTrackerService fuelTrackerService;
 
-	@GetMapping("ping")
-	public String ping() {
-		return "pong";
+	@GetMapping("fuelTrackers")
+	public List<FuelTracker> index() {
+		return fuelTrackerService.findAll();
 	}
 
-	@GetMapping("fuels")
-	public List<Fuel> index() {
-		return fuelService.findAll();
+	@GetMapping("fuelTrackers/{fid}")
+	public Optional<FuelTracker> show(@PathVariable("fid") Integer id) {
+		return fuelTrackerService.showFuelById(id);
 	}
 
-	@GetMapping("fuels/{fid}")
-	public Optional<Fuel> show(@PathVariable("fid") Integer id) {
-		return fuelService.showFuelById(id);
-	}
-
-	@PostMapping("fuels")
-	public Fuel createFuel(@RequestBody Fuel fuel, HttpServletRequest request, HttpServletResponse response) {
-		fuel = fuelService.createFuelObject(fuel);
-
-		if (fuel == null) {
-			response.setStatus(404);
-		}
-
-		return fuel;
-	}
-
-	@PutMapping("fuels/{fid}")
-	public Fuel updateFuel(@PathVariable("fid") Integer id, @RequestBody Fuel fuel, HttpServletRequest request,
+	@PostMapping("fuelTrackers")
+	public FuelTracker createFuel(@RequestBody FuelTracker fuel, HttpServletRequest request,
 			HttpServletResponse response) {
-		fuel = fuelService.updateFuelById(id, fuel);
+		fuel = fuelTrackerService.createFuelObject(fuel);
+		response.setStatus(201);
+		if (fuel == null) {
+			response.setStatus(404);
+		}
+
+		return fuel;
+	}
+
+	@PutMapping("fuelTrackers/{fid}")
+	public FuelTracker updateFuel(@PathVariable("fid") Integer id, @RequestBody FuelTracker fuel,
+			HttpServletRequest request, HttpServletResponse response) {
+		fuel = fuelTrackerService.updateFuelById(id, fuel);
 		if (fuel == null) {
 			response.setStatus(404);
 		}
 		return fuel;
 	}
 
-	@DeleteMapping("fuels/{id}")
+	@DeleteMapping("fuelTrackers/{id}")
 	public void deleteFuel(@PathVariable("id") Integer id, HttpServletRequest request, HttpServletResponse response) {
-		if (fuelService.deleteById(id)) {
+		if (fuelTrackerService.deleteById(id)) {
 			response.setStatus(204);
 		} else {
 			response.setStatus(404);

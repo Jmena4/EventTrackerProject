@@ -35,7 +35,7 @@ public class Vehicle {
 
 	@JsonIgnore
 	@OneToMany(mappedBy = "vehicle")
-	private List<Fuel> fuel;
+	private List<FuelTracker> fuel;
 
 	public int getId() {
 		return id;
@@ -77,11 +77,11 @@ public class Vehicle {
 		this.model = model;
 	}
 
-	public List<Fuel> getFuel() {
+	public List<FuelTracker> getFuel() {
 		return fuel;
 	}
 
-	public void setFuel(List<Fuel> fuel) {
+	public void setFuel(List<FuelTracker> fuel) {
 		this.fuel = fuel;
 	}
 
