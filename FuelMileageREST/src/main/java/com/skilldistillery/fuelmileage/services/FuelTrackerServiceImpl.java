@@ -6,51 +6,51 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.skilldistillery.fuelmileage.entities.Fuel;
-import com.skilldistillery.fuelmileage.repositories.FuelRepository;
+import com.skilldistillery.fuelmileage.entities.FuelTracker;
+import com.skilldistillery.fuelmileage.repositories.FuelTrackerRepository;
 
 @Service
-public class FuelServiceImpl implements FuelService {
+public class FuelTrackerServiceImpl implements FuelTrackerService {
 
 	@Autowired
-	private FuelRepository fuelRepo;
+	private FuelTrackerRepository fuelTrackerRepo;
 
 	@Override
-	public List<Fuel> findAll() {
-		return fuelRepo.findAll();
+	public List<FuelTracker> findAll() {
+		return fuelTrackerRepo.findAll();
 	}
 
 	@Override
-	public Optional<Fuel> showFuelById(int id) {
-		Optional<Fuel> showFuel =fuelRepo.findById(id);
+	public Optional<FuelTracker> showFuelById(int id) {
+		Optional<FuelTracker> showFuel =fuelTrackerRepo.findById(id);
 		return showFuel;
 	}
 
 	@Override
-	public Fuel createFuelObject(Fuel fuel) {
-		Fuel createFuel = fuelRepo.saveAndFlush(fuel);
+	public FuelTracker createFuelObject(FuelTracker fuel) {
+		FuelTracker createFuel = fuelTrackerRepo.saveAndFlush(fuel);
 		return createFuel;
 	}
 
 	@Override
-	public Fuel updateFuelById(int id, Fuel fuel) {
-		Optional<Fuel> opt = fuelRepo.findById(id);
+	public FuelTracker updateFuelById(int id, FuelTracker fuel) {
+		Optional<FuelTracker> opt = fuelTrackerRepo.findById(id);
 		if (opt.isPresent()) {
-			Fuel managedFuel = opt.get();
+			FuelTracker managedFuel = opt.get();
 			managedFuel.setGallons(fuel.getGallons());
 			managedFuel.setPricePerGallon(fuel.getPricePerGallon());
 			managedFuel.setTotalPrice(fuel.getTotalPrice());
 			managedFuel.setEstimatedMiles(fuel.getEstimatedMiles());
 			managedFuel.setOdometerReading(fuel.getOdometerReading());
 			managedFuel.setVehicle(fuel.getVehicle());
-			fuelRepo.saveAndFlush(managedFuel);
+			fuelTrackerRepo.saveAndFlush(managedFuel);
 			return managedFuel;
 		}
 		return null;
 	}
 
 	@Override
-	public Fuel replaceFuelById(int id, Fuel fuel) {
+	public FuelTracker replaceFuelById(int id, FuelTracker fuel) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -58,8 +58,8 @@ public class FuelServiceImpl implements FuelService {
 	@Override
 	public Boolean deleteById(int fuelId) {
 		boolean deleted = false;
-		if (fuelRepo.existsById(fuelId)) {
-			fuelRepo.deleteById(fuelId);
+		if (fuelTrackerRepo.existsById(fuelId)) {
+			fuelTrackerRepo.deleteById(fuelId);
 			deleted = true;
 		}
 		return deleted;

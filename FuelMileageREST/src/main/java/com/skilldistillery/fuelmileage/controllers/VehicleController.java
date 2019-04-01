@@ -26,11 +26,6 @@ public class VehicleController {
 	@Autowired
 	private VehicleService vehicleService;
 
-	@GetMapping("ping2")
-	public String ping() {
-		return "pong2";
-	}
-
 	@GetMapping("vehicles")
 	public List<Vehicle> index() {
 		return vehicleService.findAll();
