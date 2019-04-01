@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.skilldistillery.fuelmileage.entities.FuelTracker;
+import com.skilldistillery.fuelmileage.entities.Vehicle;
 import com.skilldistillery.fuelmileage.services.FuelTrackerService;
 
 @RestController
@@ -42,7 +43,7 @@ public class FuelTrackerController {
 		fuel = fuelTrackerService.createFuelObject(fuel);
 		response.setStatus(201);
 		if (fuel == null) {
-			response.setStatus(404);
+			response.setStatus(4091);
 		}
 
 		return fuel;
@@ -65,5 +66,16 @@ public class FuelTrackerController {
 		} else {
 			response.setStatus(404);
 		}
+	}
+
+	@GetMapping("fuelTrackers/{fid}/vehicle")
+	public Vehicle getVehcile(@PathVariable("fid") Integer id, HttpServletResponse response) {
+		Vehicle vehicle = fuelTrackerService.findVehicleByFuelTrackerId(id);
+		if (vehicle == null) {
+			response.setStatus(404);
+
+		}
+		return vehicle;
+
 	}
 }

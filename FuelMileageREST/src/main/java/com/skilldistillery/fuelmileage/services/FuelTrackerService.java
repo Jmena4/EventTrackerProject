@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.skilldistillery.fuelmileage.entities.FuelTracker;
+import com.skilldistillery.fuelmileage.entities.Vehicle;
 
 public interface FuelTrackerService {
 	
@@ -18,5 +19,7 @@ public interface FuelTrackerService {
 	public FuelTracker replaceFuelById(int id, FuelTracker fuel);
 
 	public Boolean deleteById(int id);
+
+	public Vehicle findVehicleByFuelTrackerId(Integer id);
 
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.fuelmileage.entities.FuelTracker;
+import com.skilldistillery.fuelmileage.entities.Vehicle;
 import com.skilldistillery.fuelmileage.repositories.FuelTrackerRepository;
 
 @Service
@@ -63,5 +64,13 @@ public class FuelTrackerServiceImpl implements FuelTrackerService {
 			deleted = true;
 		}
 		return deleted;
+	}
+
+	@Override
+	public Vehicle findVehicleByFuelTrackerId(Integer id) {
+		Vehicle vehicle = fuelTrackerRepo.queryForVehicleByFuelTrackerId(id);
+//		List<Actor> actors = repo.findActorsByFilmId(id);
+		System.out.println(vehicle + "Size of vehicle");
+		return vehicle;
 	}
 }
