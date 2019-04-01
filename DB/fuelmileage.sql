@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `Fuel` (
   `total_purchase_price` DECIMAL(9,2) NULL,
   `estimated_miles` INT NULL,
   `odometer_reading` INT NOT NULL,
-  `vehicle_id` INT NOT NULL,
+  `vehicle_id` INT ,
   PRIMARY KEY (`id`),
   INDEX `fk_vehicle_id_to_vehicle_idx` (`vehicle_id` ASC),
   CONSTRAINT `fk_vehicle_id_to_vehicle`
@@ -163,4 +163,3 @@ INSERT INTO `Fuel` (`id`, `date`, `gallons`, `price_per_gallon`, `total_purchase
 INSERT INTO `Fuel` (`id`, `date`, `gallons`, `price_per_gallon`, `total_purchase_price`, `estimated_miles`, `odometer_reading`, `vehicle_id`) VALUES (81, '3/11/19', 17.299, 2.159, 37.35, 298, 98225, 1);
 
 COMMIT;
-
