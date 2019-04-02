@@ -16,11 +16,17 @@ function init() {
 				event.preventDefault();
 				addFuelTracker();
 			});
-	document.getElementById('deleteFuelTracker').addEventListener('click',
-			function(evt) {
-				event.preventDefault();
-				deleteFuelTracker();
-			});
+	document.deleteFuelTrackerForm.deleteFuelTracker
+			.addEventListener(
+					'click',
+					function(evt) {
+						event.preventDefault();
+						var fuelTrackerId = document.deleteFuelTrackerForm.fuelTrackerId.value;
+						if (!isNaN(fuelTrackerId) && fuelTrackerId > 0) {
+							deleteFuelTracker(fuelTrackerId);
+						}
+
+					});
 }
 
 function getFuelTracker(fuelTrackerId) {
@@ -124,7 +130,10 @@ function addFuelTracker() {
 	fuelTracker.totalPrice = f.totalPrice.value;
 	fuelTracker.estimatedMiles = f.estimatedMiles.value;
 	fuelTracker.odometerReading = f.odometerReading.value;
-	fuelTracker.vehicle = f.vehicle.value;
+	fuelTracker.vehicle = {
+		id : f.vehicle.value
+	};
+
 	console.log(fuelTracker);
 	let xhr = new XMLHttpRequest();
 	xhr.open('POST', 'api/fuelTrackers');
@@ -133,7 +142,7 @@ function addFuelTracker() {
 			if (xhr.status === 201) {
 				let addedFuelTracker = JSON.parse(xhr.responseText);
 				console.log(addedFuelTracker);
-				displayFilm(addedFuelTracker);
+				displayFuelTracker(addedFuelTracker);
 			}
 		}
 	}
@@ -141,20 +150,42 @@ function addFuelTracker() {
 	xhr.send(JSON.stringify(fuelTracker));
 }
 function deleteFuelTracker(fuelTrackerId) {
+	console.log('deleteFuelTracker() called.');
+	let f = document.deleteFuelTrackerForm;
+	let fuelTracker = {};
 	let xhr = new XMLHttpRequest();
-	xhr.open('DELTE', 'api/fuelTrackers/' + fuelTrackerId, true);
+	xhr.open('DELETE', 'api/fuelTrackers/' + fuelTrackerId, true);
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState === 4) {
 			if (xhr.status == 200 || xhr.status == 201) {
 				console.log('Found fuel tracker entry ' + fuelTrackerId);
-				let fuelTracker = JSON.parse(xhr.responseText);
-				console.log(fuelTracker);
+				let deleteFuelTracker = JSON.parse(xhr.responseText);
+				console.log(deleteFuelTracker);
 
-				displayFuelTracker(fuelTracker);
-			} else {
-				document.getElementById('FuelTrackerData').textContent = 'Fuel Tracker entry not Found';
 			}
 		}
 	}
-	xhr.send(null);
+	xhr.setRequestHeader('Content-type', 'application/json');
+	xhr.send(JSON.stringify(fuelTracker));
+
+}
+function updateFuelTracker(fuelTrackerId) {
+	console.log('updateFuelTracker() called.');
+	let f = document.updateFuelTrackerForm;
+	let fuelTracker = {};
+	let xhr = new XMLHttpRequest();
+	xhr.open('PUT', 'api/fuelTrackers/' + fuelTrackerId, true);
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState === 4) {
+			if (xhr.status == 200 || xhr.status == 201) {
+				console.log('Found fuel tracker entry ' + fuelTrackerId);
+				let updateFuelTracker = JSON.parse(xhr.responseText);
+				console.log(updateFuelTracker);
+
+			}
+		}
+	}
+	xhr.setRequestHeader('Content-type', 'application/json');
+	xhr.send(JSON.stringify(fuelTracker));
+
 }
