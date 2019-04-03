@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <title>Fuel Tracker App</title>
 <script type="text/javascript" src="js/script.js"></script>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+
 </head>
 <body>
 	<h1>Welcome to REST Fuel Tracker</h1>
 
 	<form name="fuelTrackerForm">
 		<input type="number" name="fuelTrackerId">
-		<button name="lookup">Get Fuel Tracker Entry by Id</button>
+		<button name="lookup">Get Fuel Tracker List</button>
 	</form>
 	<div id="output">
 		<div id="fuelTrackerData"></div>
@@ -22,6 +22,7 @@
 	<div id='addFuelTrackerDiv'>
 		<form name='addFuelTrackerForm'>
 			<!-- Date: <input name='date' type='text'> <br> -->
+			Id: <input name='id' type='number'> <br>
 			Gallons: <input name='gallons' type='text'> <br>
 			Price/Gallon: <input name='pricePerGallon' type='number'> <br>
 			Total Purchase Price: <input name='totalPrice' type='number'> <br>
