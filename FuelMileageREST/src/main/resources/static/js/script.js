@@ -4,11 +4,13 @@ window.addEventListener('load', function(e) {
 });
 
 function init() {
+	getFuelTrackerList();
 	document.fuelTrackerForm.lookup.addEventListener('click', function(event) {
 		event.preventDefault();
 		var fuelTrackerId = document.fuelTrackerForm.fuelTrackerId.value;
 		if (!isNaN(fuelTrackerId) && fuelTrackerId > 0) {
-			getFuelTrackerList(fuelTrackerId);
+			getFuelTrackerById(fuelTrackerId);
+			// individual entry
 		}
 	})
 	document.getElementById('addFuelTracker').addEventListener('click',
@@ -28,8 +30,25 @@ function init() {
 
 					});
 }
-
-function getFuelTrackerList() {
+function getFuelTrackerById(fuelTrackerId){
+	let xhr = new XMLHttpRequest();
+	xhr.open('GET', 'api/fuelTrackers/'+fuelTrackerId, true);
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState === 4) {
+			if (xhr.status == 200 || xhr.status == 201) {
+				console.log('Found fuel tracker entries '+ fuelTrackerId);
+				let fuelTracker = JSON.parse(xhr.responseText);
+				console.log(fuelTrackerId);
+				displayFuelTrackerById(fuelTrackerId);
+			} else {
+				document.getElementById('FuelTrackerData').textContent = 'Fuel Tracker entry not Found';
+			}
+		}
+	}
+	xhr.send(null);
+	
+}
+function getFuelTrackerList(fuelTracker) {
 	let xhr = new XMLHttpRequest();
 	xhr.open('GET', 'api/fuelTrackers/', true);
 	xhr.onreadystatechange = function() {
@@ -46,98 +65,187 @@ function getFuelTrackerList() {
 	}
 	xhr.send(null);
 }
-
-function displayFuelTrackerList(fuelTracker) {
+function displayFuelTrackerById(fuelTrackerId){
 	let fuelTrackerDiv = document.getElementById('fuelTrackerData');
-	fuelTrackerDiv.textContent = '';
-
-//	let div = document.createElement('div');
-//	fuelTrackerDiv.append(div);
-
+	while (fuelTrackerDiv.firstElementChild) {
+		fuelTrackerDiv.removeChild(fuelTrackerDiv.firstElementChild);
+	}
 	let h2 = document.createElement('h2');
 	h2.textContent = "Fuel Tracker Entry: " + fuelTracker.date;
 	fuelTrackerDiv.appendChild(h2);
+	
+	fuelTrackerDiv.textContent = '';
+	 let ul = document.createElement("ul");
+		
+	 let li = document.createElement("li");
+	 li.textContent = "Id: " + fuelTracker.id ;
+	 ul.appendChild(li);
+	
+	 li = document.createElement("li");
+	 li.textContent = "Gallons: " + fuelTracker.gallons;
+	 ul.appendChild(li);
+			
+	 li = document.createElement("li");
+	 li.textContent = "Price/Gallon: " + fuelTracker.pricePerGallon;
+	 ul.appendChild(li);
+			
+	 li = document.createElement("li");
+	 li.textContent = "Total Purchase Price: " +
+	 fuelTracker.totalPurchasePrice;
+	 ul.appendChild(li);
+			
+	 li = document.createElement("li");
+	 li.textContent = "Estimated Miles: " + fuelTracker.estimatedMiles;
+	 ul.appendChild(li);
+			
+	 li = document.createElement("li");
+	 li.textContent = "Odometer Reading: " + fuelTracker.odometerReading;
+	 ul.appendChild(li);
+	 
+	
+	 fuelTrackerDiv.appendChild(ul);
+	 getAndDisplayFuelTrackerVehicle(fuelTracker);
+}
+function displayFuelTrackerList(fuelTracker) {
+	let fuelTrackerDiv = document.getElementById('fuelTrackerData');
+	while (fuelTrackerDiv.firstElementChild) {
+		fuelTrackerDiv.removeChild(fuelTrackerDiv.firstElementChild);
+	}
+	fuelTrackerDiv.textContent = '';
 
+	// let div = document.createElement('div');
+	// fuelTrackerDiv.append(div);
 
+	let h2 = document.createElement('h2');
+	h2.textContent = "Fuel Tracker Entries: ";
+	fuelTrackerDiv.appendChild(h2);
 	let table = document.createElement("table");
-	fuelTrackerDiv.appendChild(table);
-	
-	let th = document.createElement("th");
-	
-	th.textContent = "Id";
-	table.appendChild(th);	
-	
-	
-	th.textContent = "Gallons";
-	table.appendChild(th);	
+	let thead = document.createElement("thead");
+	let row = document.createElement("tr");
 
-//	for (let i = 0; i < fueltracker.length; i++) {
-//		let tr = document.createElement("tr");
-//		th.appendChild(tr);
-//		
-//		for (let j = 0; j < fueltracker.length; j++) {
-//			let td = document.createElement("td");
-//			
-//			td.textContent = fuelTracker.id;
-//			tr.appendChild(td);
+	let cell = document.createElement("th");
+	cell.textContent = "Id:";
+	row.appendChild(cell);
+
+	cell = document.createElement("th");
+	cell.textContent = "Date:";
+	row.appendChild(cell);
+
+	cell = document.createElement("th");
+	cell.textContent = "Gallons:";
+	row.appendChild(cell);
+
+	cell = document.createElement("th");
+	cell.textContent = "Price/Gallon:";
+	row.appendChild(cell);
+
+	cell = document.createElement("th");
+	cell.textContent = "Total Purchase Price:";
+	row.appendChild(cell);
+
+	cell = document.createElement("th");
+	cell.textContent = "Estimated Miles:";
+	row.appendChild(cell);
+
+	cell = document.createElement("th");
+	cell.textContent = "Odometer Reading:";
+	row.appendChild(cell);
+
+//	cell = document.createElement("th");
+//	cell.textContent = "Vehicle Id #:";
+//	row.appendChild(cell);
+
+	cell = document.createElement("th");
+	cell.textContent = "Vehicle Make:";
+	row.appendChild(cell);
+	
+	cell = document.createElement("th");
+	cell.textContent = "Vehicle Model:";
+	row.appendChild(cell);
+	
+	cell = document.createElement("th");
+	cell.textContent = "Vehicle Year:";
+	row.appendChild(cell);
+	
+	thead.appendChild(row);
+	table.appendChild(thead);
+
+	let columnCount = 8;
+	for (let i = 0; i < fuelTracker.length; i++) {
+
+		let row = document.createElement("tr");
+		
+//		for (let j=0; j < columnCount; j++) {
+			let cell = document.createElement("td");
+			cell.textContent = fuelTracker[i].id;
+			row.appendChild(cell);
+
+			cell = document.createElement("td");
+			cell.textContent = fuelTracker[i].date;
+			row.appendChild(cell);
+
+			cell = document.createElement("td");
+			cell.textContent = fuelTracker[i].gallons;
+			row.appendChild(cell);
+
+			cell = document.createElement("td");
+			cell.textContent = fuelTracker[i].pricePerGallon;
+			row.appendChild(cell);
+
+			cell = document.createElement("td");
+			cell.textContent = fuelTracker[i].totalPrice;
+			row.appendChild(cell);
+
+			cell = document.createElement("td");
+			cell.textContent = fuelTracker[i].estimatedMiles;
+			row.appendChild(cell);
+
+			cell = document.createElement("td");
+			cell.textContent = fuelTracker[i].odometerReading;
+			row.appendChild(cell);
+
+//			cell = document.createElement("td");
+//			cell.textContent = fuelTracker[i].vehicle.id;
+//			row.appendChild(cell);
+			
+			cell = document.createElement("td");
+			cell.textContent = fuelTracker[i].vehicle.make;
+			row.appendChild(cell);
+			
+			cell = document.createElement("td");
+			cell.textContent = fuelTracker[i].vehicle.model;
+			row.appendChild(cell);
+			
+			cell = document.createElement("td");
+			cell.textContent = fuelTracker[i].vehicle.year;
+			row.appendChild(cell);
+			
+			let butt = document.createElement('input'); // create a button
+		    butt.setAttribute('type','button');
+		    butt.setAttribute('name','edit');
+		    butt.setAttribute('id','editFuelTrackerEntry');
+		    butt.setAttribute('value','Edit');
+		    butt.onclick = function() { // set onclick handler
+//		    	updateFuelTracker(this.fuelTrackerId);
+		      }
+		    row.appendChild(butt);
+		    
+		    butt = document.createElement('input'); // create a button
+		    butt.setAttribute('type','button');
+		    butt.setAttribute('name','delete');
+		    butt.setAttribute('id','deleteFuelTrackerEntry');
+		    butt.setAttribute('value','Delete');
+		    butt.onclick = function() { // set onclick handler
+//		    	updateFuelTracker(this.fuelTrackerId);
+		      }
+		    row.appendChild(butt);
 //		}
-//	}
+		table.appendChild(row);
+	}
+
+	fuelTrackerDiv.appendChild(table);
+
 	
-
-//			cellText.textContent = "Gallons: " + fuelTracker.gallons;
-//			td.appendChild(cellText);
-//
-//			cellText.textContent = "Price/Gallon: "
-//					+ fuelTracker.pricePerGallon;
-//			td.appendChild(cellText);
-			//					
-			// li = document.createElement("li");
-			// li.textContent = "Total Purchase Price: " +
-			// fuelTracker.totalPurchasePrice;
-			// td.appendChild(cellText);
-			//					
-			// li = document.createElement("li");
-			// li.textContent = "Estimated Miles: " +
-			// fuelTracker.estimatedMiles;
-			// td.appendChild(cellText);
-			//					
-			// li = document.createElement("li");
-			// li.textContent = "Odometer Reading: " +
-			// fuelTracker.odometerReading;
-			// td.appendChild(cellText);
-
-	// let ul = document.createElement("ul");
-	//	
-	// for (let i = 0; i < fuelTracker.length; i++) {
-	// let li = document.createElement("li");
-	//		
-	// li.textContent = "Id: " + fuelTracker.id ;
-	// ul.appendChild(li);
-	//		
-	// li.textContent = "Gallons: " + fuelTracker.gallons;
-	// ul.appendChild(li);
-	//		
-	// li = document.createElement("li");
-	// li.textContent = "Price/Gallon: " + fuelTracker.pricePerGallon;
-	// ul.appendChild(li);
-	//		
-	// li = document.createElement("li");
-	// li.textContent = "Total Purchase Price: " +
-	// fuelTracker.totalPurchasePrice;
-	// ul.appendChild(li);
-	//		
-	// li = document.createElement("li");
-	// li.textContent = "Estimated Miles: " + fuelTracker.estimatedMiles;
-	// ul.appendChild(li);
-	//		
-	// li = document.createElement("li");
-	// li.textContent = "Odometer Reading: " + fuelTracker.odometerReading;
-	// ul.appendChild(li);
-	// }
-	//
-	// div.appendChild(ul);
-
-	getAndDisplayFuelTrackerVehicle(fuelTracker);
 }
 
 function getAndDisplayFuelTrackerVehicle(fuelTracker) {

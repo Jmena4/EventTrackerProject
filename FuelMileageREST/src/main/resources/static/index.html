@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">	
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,33 +12,40 @@
 
 	<form name="fuelTrackerForm">
 		<input type="number" name="fuelTrackerId">
-		<button name="lookup">Get Fuel Tracker List</button>
+		<button name="lookup">Get Fuel Tracker Entry By Id</button>
 	</form>
 	<div id="output">
-		<div id="fuelTrackerData"></div>
+		<div id="fuelTrackerData">
+			<button name="edit" id='editFuelEntry'>Edit</button>
+			<button id='deleteFuelEntry' onclick="remove_update(event)">Remove</button>
+		</div>
 		<div id="vehicleData"></div>
-	</div>	
+	</div>
 
 	<hr>
 	<div id='addFuelTrackerDiv'>
 		<form name='addFuelTrackerForm'>
 			<!-- Date: <input name='date' type='text'> <br> -->
-			Id: <input name='id' type='number'> <br>
-			Gallons: <input name='gallons' type='text'> <br>
-			Price/Gallon: <input name='pricePerGallon' type='number'> <br>
+			Id: <input name='id' type='number'> <br> 
+			Gallons: <input	name='gallons' type='text'> <br> 
+			Price/Gallon: <inputname='pricePerGallon' type='number'> <br> 
 			Total Purchase Price: <input name='totalPrice' type='number'> <br>
 			Estimated Miles:<input name='estimatedMiles' type='text'> <br>
-			Odometer Reading:	<input name='odometerReading' type='text'> <br>
-			Vehicle:	<input name='vehicle' type='number'> <br>
+			Odometer Reading: <input name='odometerReading' type='text'>
+			<br> Vehicle: <input name='vehicle' type='number'> <br>
 			<button id='addFuelTracker'>Add Fuel Tracker Entry</button>
 		</form>
 	</div>
 	<hr>
 	<div>
-	<form name = 'deleteFuelTrackerForm'>
-	<input type="number" name="fuelTrackerId">
-	<button id='deleteFuelTracker'>Delete Fuel Tracker Entry by Id</button>
-	</form>
+		<form name='deleteFuelTrackerForm'>
+			<input type="number" name="fuelTrackerId">
+			<button id='deleteFuelTracker'>Delete Fuel Tracker Entry by
+				Id</button>
+		</form>
 	</div>
 </body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </html>
