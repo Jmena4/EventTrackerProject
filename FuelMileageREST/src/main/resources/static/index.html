@@ -28,7 +28,7 @@
 			<!-- Date: <input name='date' type='text'> <br> -->
 			Id: <input name='id' type='number'> <br> 
 			Gallons: <input	name='gallons' type='text'> <br> 
-			Price/Gallon: <inputname='pricePerGallon' type='number'> <br> 
+			Price/Gallon: <input name='pricePerGallon' type='number'> <br> 
 			Total Purchase Price: <input name='totalPrice' type='number'> <br>
 			Estimated Miles:<input name='estimatedMiles' type='text'> <br>
 			Odometer Reading: <input name='odometerReading' type='text'>
@@ -42,6 +42,18 @@
 			<input type="number" name="fuelTrackerId">
 			<button id='deleteFuelTracker'>Delete Fuel Tracker Entry by
 				Id</button>
+		</form>
+	</div>
+		<div id='editFuelTrackerDiv'>
+		<form name='editFuelTrackerForm'>
+			Id: <input id="editId" name='id' type='number'> <br> 
+			Gallons: <input	id="editGallons" name='gallons' type='text'> <br> 
+			Price/Gallon: <input id="editPricePerGallons" name='pricePerGallon' type='number'> <br> 
+			Total Purchase Price: <input id="editTotalPurchasePrice" name='totalPrice' type='number'> <br>
+			Estimated Miles:<input id="editEstimatedMiles" name='estimatedMiles' type='text'> <br>
+			Odometer Reading: <input id="editOdometerReading" name='odometerReading' type='text'>
+			<br> Vehicle: <input id="editVehicle" name='vehicle' type='number'> <br>
+			<button id='editFuelTracker'>Save Fuel Tracker Entry</button>
 		</form>
 	</div>
 </body>

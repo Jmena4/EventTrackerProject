@@ -9,7 +9,7 @@ function init() {
 		event.preventDefault();
 		var fuelTrackerId = document.fuelTrackerForm.fuelTrackerId.value;
 		if (!isNaN(fuelTrackerId) && fuelTrackerId > 0) {
-			getFuelTrackerById(fuelTrackerId);
+//			getFuelTrackerById(fuelTrackerId);
 			// individual entry
 		}
 	})
@@ -30,13 +30,13 @@ function init() {
 
 					});
 }
-function getFuelTrackerById(fuelTrackerId){
+function getFuelTrackerById(fuelTrackerId) {
 	let xhr = new XMLHttpRequest();
-	xhr.open('GET', 'api/fuelTrackers/'+fuelTrackerId, true);
+	xhr.open('GET', 'api/fuelTrackers/' + fuelTrackerId, true);
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState === 4) {
 			if (xhr.status == 200 || xhr.status == 201) {
-				console.log('Found fuel tracker entries '+ fuelTrackerId);
+				console.log('Found fuel tracker entries ' + fuelTrackerId);
 				let fuelTracker = JSON.parse(xhr.responseText);
 				console.log(fuelTrackerId);
 				displayFuelTrackerById(fuelTrackerId);
@@ -46,7 +46,7 @@ function getFuelTrackerById(fuelTrackerId){
 		}
 	}
 	xhr.send(null);
-	
+
 }
 function getFuelTrackerList(fuelTracker) {
 	let xhr = new XMLHttpRequest();
@@ -65,47 +65,45 @@ function getFuelTrackerList(fuelTracker) {
 	}
 	xhr.send(null);
 }
-function displayFuelTrackerById(fuelTrackerId){
-	let fuelTrackerDiv = document.getElementById('fuelTrackerData');
-	while (fuelTrackerDiv.firstElementChild) {
-		fuelTrackerDiv.removeChild(fuelTrackerDiv.firstElementChild);
-	}
-	let h2 = document.createElement('h2');
-	h2.textContent = "Fuel Tracker Entry: " + fuelTracker.date;
-	fuelTrackerDiv.appendChild(h2);
-	
-	fuelTrackerDiv.textContent = '';
-	 let ul = document.createElement("ul");
-		
-	 let li = document.createElement("li");
-	 li.textContent = "Id: " + fuelTracker.id ;
-	 ul.appendChild(li);
-	
-	 li = document.createElement("li");
-	 li.textContent = "Gallons: " + fuelTracker.gallons;
-	 ul.appendChild(li);
-			
-	 li = document.createElement("li");
-	 li.textContent = "Price/Gallon: " + fuelTracker.pricePerGallon;
-	 ul.appendChild(li);
-			
-	 li = document.createElement("li");
-	 li.textContent = "Total Purchase Price: " +
-	 fuelTracker.totalPurchasePrice;
-	 ul.appendChild(li);
-			
-	 li = document.createElement("li");
-	 li.textContent = "Estimated Miles: " + fuelTracker.estimatedMiles;
-	 ul.appendChild(li);
-			
-	 li = document.createElement("li");
-	 li.textContent = "Odometer Reading: " + fuelTracker.odometerReading;
-	 ul.appendChild(li);
-	 
-	
-	 fuelTrackerDiv.appendChild(ul);
-	 getAndDisplayFuelTrackerVehicle(fuelTracker);
-}
+//function displayFuelTrackerById(fuelTrackerId) {
+//	let fuelTrackerDiv = document.getElementById('fuelTrackerData');
+//	while (fuelTrackerDiv.firstElementChild) {
+//		fuelTrackerDiv.removeChild(fuelTrackerDiv.firstElementChild);
+//	}
+//	let h2 = document.createElement('h2');
+//	h2.textContent = "Fuel Tracker Entry: " + fuelTracker.date;
+//	fuelTrackerDiv.appendChild(h2);
+//
+//	fuelTrackerDiv.textContent = '';
+//	let ul = document.createElement("ul");
+//
+//	let li = document.createElement("li");
+//	li.textContent = "Id: " + fuelTracker.id;
+//	ul.appendChild(li);
+//
+//	li = document.createElement("li");
+//	li.textContent = "Gallons: " + fuelTracker.gallons;
+//	ul.appendChild(li);
+//
+//	li = document.createElement("li");
+//	li.textContent = "Price/Gallon: " + fuelTracker.pricePerGallon;
+//	ul.appendChild(li);
+//
+//	li = document.createElement("li");
+//	li.textContent = "Total Purchase Price: " + fuelTracker.totalPurchasePrice;
+//	ul.appendChild(li);
+//
+//	li = document.createElement("li");
+//	li.textContent = "Estimated Miles: " + fuelTracker.estimatedMiles;
+//	ul.appendChild(li);
+//
+//	li = document.createElement("li");
+//	li.textContent = "Odometer Reading: " + fuelTracker.odometerReading;
+//	ul.appendChild(li);
+//
+//	fuelTrackerDiv.appendChild(ul);
+//	getAndDisplayFuelTrackerVehicle(fuelTracker);
+//}
 function displayFuelTrackerList(fuelTracker) {
 	let fuelTrackerDiv = document.getElementById('fuelTrackerData');
 	while (fuelTrackerDiv.firstElementChild) {
@@ -151,22 +149,22 @@ function displayFuelTrackerList(fuelTracker) {
 	cell.textContent = "Odometer Reading:";
 	row.appendChild(cell);
 
-//	cell = document.createElement("th");
-//	cell.textContent = "Vehicle Id #:";
-//	row.appendChild(cell);
+	// cell = document.createElement("th");
+	// cell.textContent = "Vehicle Id #:";
+	// row.appendChild(cell);
 
 	cell = document.createElement("th");
 	cell.textContent = "Vehicle Make:";
 	row.appendChild(cell);
-	
+
 	cell = document.createElement("th");
 	cell.textContent = "Vehicle Model:";
 	row.appendChild(cell);
-	
+
 	cell = document.createElement("th");
 	cell.textContent = "Vehicle Year:";
 	row.appendChild(cell);
-	
+
 	thead.appendChild(row);
 	table.appendChild(thead);
 
@@ -174,78 +172,103 @@ function displayFuelTrackerList(fuelTracker) {
 	for (let i = 0; i < fuelTracker.length; i++) {
 
 		let row = document.createElement("tr");
-		
-//		for (let j=0; j < columnCount; j++) {
-			let cell = document.createElement("td");
-			cell.textContent = fuelTracker[i].id;
-			row.appendChild(cell);
 
-			cell = document.createElement("td");
-			cell.textContent = fuelTracker[i].date;
-			row.appendChild(cell);
+		// for (let j=0; j < columnCount; j++) {
+		let cell = document.createElement("td");
+		cell.textContent = fuelTracker[i].id;
+		row.appendChild(cell);
 
-			cell = document.createElement("td");
-			cell.textContent = fuelTracker[i].gallons;
-			row.appendChild(cell);
+		cell = document.createElement("td");
+		cell.textContent = fuelTracker[i].date;
+		row.appendChild(cell);
 
-			cell = document.createElement("td");
-			cell.textContent = fuelTracker[i].pricePerGallon;
-			row.appendChild(cell);
+		cell = document.createElement("td");
+		cell.textContent = fuelTracker[i].gallons;
+		row.appendChild(cell);
 
-			cell = document.createElement("td");
-			cell.textContent = fuelTracker[i].totalPrice;
-			row.appendChild(cell);
+		cell = document.createElement("td");
+		cell.textContent = fuelTracker[i].pricePerGallon;
+		row.appendChild(cell);
 
-			cell = document.createElement("td");
-			cell.textContent = fuelTracker[i].estimatedMiles;
-			row.appendChild(cell);
+		cell = document.createElement("td");
+		cell.textContent = fuelTracker[i].totalPrice;
+		row.appendChild(cell);
 
-			cell = document.createElement("td");
-			cell.textContent = fuelTracker[i].odometerReading;
-			row.appendChild(cell);
+		cell = document.createElement("td");
+		cell.textContent = fuelTracker[i].estimatedMiles;
+		row.appendChild(cell);
 
-//			cell = document.createElement("td");
-//			cell.textContent = fuelTracker[i].vehicle.id;
-//			row.appendChild(cell);
+		cell = document.createElement("td");
+		cell.textContent = fuelTracker[i].odometerReading;
+		row.appendChild(cell);
+
+		// cell = document.createElement("td");
+		// cell.textContent = fuelTracker[i].vehicle.id;
+		// row.appendChild(cell);
+
+		cell = document.createElement("td");
+		cell.textContent = fuelTracker[i].vehicle.make;
+		row.appendChild(cell);
+
+		cell = document.createElement("td");
+		cell.textContent = fuelTracker[i].vehicle.model;
+		row.appendChild(cell);
+
+		cell = document.createElement("td");
+		cell.textContent = fuelTracker[i].vehicle.year;
+		row.appendChild(cell);
+
+		let editbutt = document.createElement('input'); // create a button
+		editbutt.setAttribute('type', 'button');
+		editbutt.setAttribute('name', 'edit');
+		editbutt.setAttribute('id', 'edit' + fuelTracker[i].id);
+		editbutt.setAttribute('value', 'Edit');
+		// do a trick here
+		// editbutt.setAttribute('data_gallons', fuelTracker[i].gallons);
+		editbutt.onclick = function(e) { // set onclick handler
+			let i = e.target.id.substring(4);
+			document.editFuelTrackerForm.editId.value = i;
 			
-			cell = document.createElement("td");
-			cell.textContent = fuelTracker[i].vehicle.make;
-			row.appendChild(cell);
+			let odometer = e.target.previousSibling.previousSibling.previousSibling.previousSibling;
+			document.editFuelTrackerForm.editOdometerReading.value = odometer.textContent;
 			
-			cell = document.createElement("td");
-			cell.textContent = fuelTracker[i].vehicle.model;
-			row.appendChild(cell);
+			let estimatedMiles = odometer.previousSibling;
+			document.editFuelTrackerForm.estimatedMiles.value = estimatedMiles.textContent;
 			
-			cell = document.createElement("td");
-			cell.textContent = fuelTracker[i].vehicle.year;
-			row.appendChild(cell);
+			let totalPrice = estimatedMiles.previousSibling;
+			document.editFuelTrackerForm.totalPrice.value = totalPrice.textContent;
 			
-			let butt = document.createElement('input'); // create a button
-		    butt.setAttribute('type','button');
-		    butt.setAttribute('name','edit');
-		    butt.setAttribute('id','editFuelTrackerEntry');
-		    butt.setAttribute('value','Edit');
-		    butt.onclick = function() { // set onclick handler
-//		    	updateFuelTracker(this.fuelTrackerId);
-		      }
-		    row.appendChild(butt);
-		    
-		    butt = document.createElement('input'); // create a button
-		    butt.setAttribute('type','button');
-		    butt.setAttribute('name','delete');
-		    butt.setAttribute('id','deleteFuelTrackerEntry');
-		    butt.setAttribute('value','Delete');
-		    butt.onclick = function() { // set onclick handler
-//		    	updateFuelTracker(this.fuelTrackerId);
-		      }
-		    row.appendChild(butt);
-//		}
+			let pricePerGallon = totalPrice.previousSibling;
+			document.editFuelTrackerForm.pricePerGallon.value = pricePerGallon.textContent;
+			
+			let gallons = pricePerGallon.previousSibling;
+			document.editFuelTrackerForm.gallons.value = gallons.textContent;
+			
+			let vehicle = odometer.nextSibling;
+			document.editFuelTrackerForm.vehicle.value = vehicle.textContent;
+
+			updateFuelTracker(i);
+		}
+		row.appendChild(editbutt);
+
+		let delbutt = document.createElement('input'); // create a button
+		delbutt.setAttribute('type', 'button');
+		delbutt.setAttribute('name', 'delete');
+		delbutt.setAttribute('id', 'delete' + fuelTracker[i].id);
+		delbutt.setAttribute('value', 'Delete');
+		delbutt.onclick = function(e) { // set onclick handler
+			var i = e.target.id.substr(6);
+//			document.editFuelTrackerForm.editId.value = fuelTracker[i].id;
+			console.log(i);
+			deleteFuelTracker(i);
+		}
+		row.appendChild(delbutt);
+		// }
 		table.appendChild(row);
 	}
 
 	fuelTrackerDiv.appendChild(table);
 
-	
 }
 
 function getAndDisplayFuelTrackerVehicle(fuelTracker) {
