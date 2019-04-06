@@ -230,7 +230,7 @@ function displayFuelTrackerList(fuelTracker) {
 			document.editFuelTrackerForm.editId.value = i;
 			// console.log(i);
 			let vehicle = e.target.previousSibling;
-			document.editFuelTrackerForm.vehicleJ.value = vehicle.textContent;
+			document.editFuelTrackerForm.vehicle.value = vehicle.textContent;
 			//			
 			// let odometer =
 			// e.target.previousSibling.previousSibling.previousSibling.previousSibling;
@@ -250,8 +250,8 @@ function displayFuelTrackerList(fuelTracker) {
 			document.editFuelTrackerForm.gallons.value = gallons.textContent;
 
 			document.getElementById('editFuelTracker').addEventListener(
-					'click', function(e) {
-						e.preventDefault();
+					'click', function(evt) {
+						evt.preventDefault();
 						let j = Number(document.editFuelTrackerForm.id.value);
 						console.log(j);
 						updateFuelTracker(j);
@@ -337,6 +337,7 @@ function addFuelTracker() {
 				let addedFuelTracker = JSON.parse(xhr.responseText);
 				console.log(addedFuelTracker);
 				displayFuelTracker(addedFuelTracker);
+				getFuelTrackerList();
 			}
 		}
 	}
@@ -371,8 +372,10 @@ function updateFuelTracker() {
 		totalPrice : document.editFuelTrackerForm.totalPrice.value,
 		estimatedMiles : document.editFuelTrackerForm.estimatedMiles.value,
 		odometerReading : document.editFuelTrackerForm.odometerReading.value,
-		vehicle : Number(document.editFuelTrackerForm.vehicleJ.value),
-
+//		vehicle : document.editFuelTrackerForm.vehicle.value,
+		vehicle : {
+				id : document.editFuelTrackerForm.vehicle.value
+			}
 	};
 	console.log(fuelEntry.id);
 	console.log('updateFuelTracker() called.');
@@ -386,7 +389,7 @@ function updateFuelTracker() {
 				console.log('Found fuel tracker entry ' + fuelEntry.id);
 				let updateFuelTracker = JSON.parse(xhr.responseText);
 				console.log(updateFuelTracker);
-
+				getFuelTrackerList();
 			}
 		}
 	}
