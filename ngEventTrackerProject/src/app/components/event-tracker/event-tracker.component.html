@@ -19,14 +19,16 @@
         <!-- <tr *ngFor="let fuelTracker of fueltrackers " > -->
         <td (click)="setSelected(fuelTracker)">{{ fuelTracker.id }}</td>
         <td>{{ fuelTracker.gallons }}</td>
+        <td>{{ fuelTracker.date }}</td>
         <td>{{ fuelTracker.pricePerGallon }}</td>
         <td>{{ fuelTracker.totalPrice }}</td>
         <td>{{ fuelTracker.estimatedMiles }}</td>
         <td>{{ fuelTracker.odometerReading }}</td>
-        <!-- <td>{{ fuelTracker.vehicle }}</td> -->
+        <td>{{ fuelTracker.vehicle }}</td>
         <td>
           <!-- <img [src]="poke.img" /> -->
-          <!-- <button (click)="">Edit</button> -->
+          <button (click)="edit" class="btn btn-primary">Edit</button>
+          <button (click)="delete" class="btn btn-danger">Delete</button>
         </td>
       </tr>
     </tbody>
@@ -42,5 +44,5 @@
   Odometer Reading: {{ selectedFuelTracker.odometerReading }} <br>
   <!-- Vehicle: {{ selectedFuelTracker.vehicle }} <br> -->
 
-  <button (click)="goBack()">Back</button>
+  <button (click)="goBack()" class="btn btn-dark">Back</button>
 </div>

@@ -12,6 +12,7 @@ export class EventTrackerComponent implements OnInit {
   fueltrackers: FuelTracker[] = [];
   selected: FuelTracker = null;
   edit: FuelTracker = null;
+  delete: FuelTracker = null;
   // add: FuelTracker = new FuelTracker();
   mode = 'list';
   selectedType = 'all';
@@ -53,7 +54,7 @@ export class EventTrackerComponent implements OnInit {
   setSelected(fuelTrackers) {
     this.selected = fuelTrackers;
   }
-  addTodo(fuelTrackers: FuelTracker) {
+  addFuelTracker(fuelTrackers: FuelTracker) {
     // todo.id = this.generateId();
     // this.todoService.create(todo);
     // this.todos = this.todoService.index();
@@ -81,7 +82,7 @@ export class EventTrackerComponent implements OnInit {
     this.selected = null;
   }
 
-  deleteTodo(fuelTrackers: FuelTracker) {
+  deleteFuelTracker(fuelTrackers: FuelTracker) {
     // this.todoService.delete(todo);
     // this.todos = this.todoService.index();
     this.eventTrackerService.destroy(fuelTrackers.id).subscribe(
