@@ -372,7 +372,7 @@ function updateFuelTracker() {
 		totalPrice : document.editFuelTrackerForm.totalPrice.value,
 		estimatedMiles : document.editFuelTrackerForm.estimatedMiles.value,
 		odometerReading : document.editFuelTrackerForm.odometerReading.value,
-//		vehicle : document.editFuelTrackerForm.vehicle.value,
+//		vehicle : document.editFuelTrackerForm.vehicle.value, does not work with objects
 		vehicle : {
 				id : document.editFuelTrackerForm.vehicle.value
 			}

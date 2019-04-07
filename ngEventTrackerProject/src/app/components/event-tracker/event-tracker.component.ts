@@ -1,0 +1,112 @@
+import { EventTrackerService } from './../../services/event-tracker.service';
+import { FuelTracker } from './../../models/fuel-tracker';
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-event-tracker',
+  templateUrl: './event-tracker.component.html',
+  styleUrls: ['./event-tracker.component.css']
+})
+export class EventTrackerComponent implements OnInit {
+
+  fueltrackers: FuelTracker[] = [];
+  selected: FuelTracker = null;
+  edit: FuelTracker = null;
+  // add: FuelTracker = new FuelTracker();
+  mode = 'list';
+  selectedType = 'all';
+  selectedFuelTracker = null;
+  editTodo: FuelTracker = null;
+  showAllFuelTrackers = false;
+  // newFuelTracker: FuelTracker = new FuelTracker();
+
+  constructor(private eventTrackerService: EventTrackerService) { }
+
+  ngOnInit() {
+    this.reload();
+  }
+
+  goBack() {
+    this.selectedFuelTracker = null;
+  }
+
+  reload() {
+    // const myObservable = this.eventTrackerService.index();
+    // myObservable.subscribe(
+      this.eventTrackerService.index().subscribe(
+      data => {
+        this.fueltrackers = data;
+      },
+      err => {
+        console.log('A bad thing happened in reload()');
+        console.log(err);
+      }
+    );
+  }
+  displayTable(): void {
+    this.selected = null;
+  }
+  // setEditTodo() {
+  //   this.edit = Object.assign({}, this.selected);
+  // }
+
+  setSelected(fuelTrackers) {
+    this.selected = fuelTrackers;
+  }
+  addTodo(fuelTrackers: FuelTracker) {
+    // todo.id = this.generateId();
+    // this.todoService.create(todo);
+    // this.todos = this.todoService.index();
+    this.eventTrackerService.create(fuelTrackers).subscribe(
+      data => {
+        this.reload();
+      },
+      err => {
+        console.error('EventTrackerComponent.addTodo(): Error');
+        console.error(err);
+      }
+    );
+    // this.newFuelTracker = new FuelTracker();
+  }
+
+  saveEdit() {
+    this.selected.gallons = this.edit.gallons;
+    this.selected.pricePerGallon = this.edit.pricePerGallon;
+    this.selected.totalPrice = this.edit.totalPrice;
+    this.selected.estimatedMiles = this.edit.estimatedMiles;
+    this.selected.odometerReading = this.edit.odometerReading;
+    this.selected.vehicle = this.edit.vehicle;
+
+    this.edit = null;
+    this.selected = null;
+  }
+
+  deleteTodo(fuelTrackers: FuelTracker) {
+    // this.todoService.delete(todo);
+    // this.todos = this.todoService.index();
+    this.eventTrackerService.destroy(fuelTrackers.id).subscribe(
+      data => {
+        this.reload();
+      },
+      err => {
+        console.error('EventTrackerComponent.deleteTodo(): Error');
+        console.error(err);
+      }
+    );
+  }
+  // updateTodo(fuelTrackers: FuelTracker): void {
+  //   // this.todoService.update(this.editTodo);
+  //   // this.todos = this.todoService.index();
+  //   this.eventTrackerService.update(fuelTrackers).subscribe(
+  //     data => {
+  //       this.reload();
+  //       this.editTodo = null;
+  //       this.selected = data;
+  //     },
+  //     err => {
+  //       console.error('EventTrackerComponent.updateTodo(): Error');
+  //       console.error(err);
+  //     }
+  //   );
+  // }
+}
