@@ -1,0 +1,48 @@
+<!-- <span *ngFor="let type of fueltrackers" (click)="selectedType = type">{{fueltrackers}} | </span> -->
+<div *ngIf="!selectedFuelTracker">
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th>Id:</th>
+        <th>Date:</th>
+        <th>Gallons:</th>
+        <th>Price/Gallon:</th>
+        <th>Total Purchase Price:</th>
+        <th>Estimated Miles:</th>
+        <th>Odometer Reading:</th>
+        <th>Vehicle Id #:</th>
+      </tr>
+    </thead>
+    <hr>
+    <tbody>
+      <tr *ngFor="let fuelTracker of fueltrackers " (click)="selectedFuelTracker = fuelTracker; mode = 'detail'">
+        <!-- <tr *ngFor="let fuelTracker of fueltrackers " > -->
+        <td (click)="setSelected(fuelTracker)">{{ fuelTracker.id }}</td>
+        <td>{{ fuelTracker.gallons }}</td>
+        <td>{{ fuelTracker.date }}</td>
+        <td>{{ fuelTracker.pricePerGallon }}</td>
+        <td>{{ fuelTracker.totalPrice }}</td>
+        <td>{{ fuelTracker.estimatedMiles }}</td>
+        <td>{{ fuelTracker.odometerReading }}</td>
+        <td>{{ fuelTracker.vehicle }}</td>
+        <td>
+          <!-- <img [src]="poke.img" /> -->
+          <button (click)="edit" class="btn btn-primary">Edit</button>
+          <button (click)="delete" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="mode === 'detail' && selectedFuelTracker">
+  <h3>Detail</h3>
+  Id: {{ selectedFuelTracker.id }} <br>
+  Gallons: {{ selectedFuelTracker.gallons }} <br>
+  Price Per Galoon: {{ selectedFuelTracker.pricePerGallon }} <br>
+  Total Purchase Price: {{ selectedFuelTracker.totalPrice }} <br>
+  Estimated Price: {{ selectedFuelTracker.estimatedPrice }} <br>
+  Odometer Reading: {{ selectedFuelTracker.odometerReading }} <br>
+  <!-- Vehicle: {{ selectedFuelTracker.vehicle }} <br> -->
+
+  <button (click)="goBack()" class="btn btn-dark">Back</button>
+</div>
