@@ -86,6 +86,20 @@ To test the api mapping copy the top link to the AWS-EC2 site. Next, in a Postma
     }`
 
 ### Javascipt Integration- WEEK 2 weekend additions
+
+This project is as much about using JSON and SpringREST as it is handling JSON responses with JavaScript.
+
+You are embarking on a weekend project that you may or may not come back to afterwards, thus we would caution you to limit your scope significantly. Last weekend we created a RESTful API that provided us with the ability to perform full CRUD on an event entity of our choosing.
+
+This weekend we will be building out the front end for this application using Javascript.
+
+## Learning Objectives
+* Adding scripts to a web application
+* Send asynchronous requests to Java controllers with JavaScript's `XMLHttpRequest
+* Consume and parse JSON responses with JavaScript
+* Build HTML with JavaScript
+* Send POST/PUT/DELETE requests with XMLHttpRequest
+
 CRUD functionality are now accessible using a Javascript supported Front-end User Interface. 
 * The page when initiated will load the entire database history of All the FuelTracker Entries available for a specific User. In the project the User has 2 vehicles. 
 
