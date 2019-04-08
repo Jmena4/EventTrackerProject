@@ -45,7 +45,7 @@ public class FuelTrackerController {
 		fuel = fuelTrackerService.createFuelObject(fuel);
 		response.setStatus(201);
 		if (fuel == null) {
-			response.setStatus(4091);
+			response.setStatus(401);
 		}
 
 		return fuel;

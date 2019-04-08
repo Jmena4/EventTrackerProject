@@ -7,8 +7,8 @@
     <input type="text" name="totalPrice" placeholder="Total Price" ngModel/>
     <input type="text" name="estimatedMiles" placeholder="Estimated Miles" ngModel/>
     <input type="text" name="odometerReading" placeholder="Odometer Reading" ngModel/>
-    <input type="text" name="vehicle.id" placeholder="Vehicle" ngModel/>
-    <button (click)= "addFuelTracker()">Save</button>
+    <input type="text" name="vehicle['id']" placeholder="Vehicle" ngModel/>
+    <button (click)= "addFuelTracker(addForm)">Save</button>
   </form>
   <button (click)="add = null;"> Back </button>
 </div>
@@ -40,7 +40,7 @@
         <td>{{ fuelTracker.totalPrice }}</td>
         <td>{{ fuelTracker.estimatedMiles }}</td>
         <td>{{ fuelTracker.odometerReading }}</td>
-        <td>{{ fuelTracker.vehicle.id | json}} </td>
+        <td>{{ fuelTracker.vehicle["id"] | json}} </td>
 
         <td>
           <!-- <img [src]="poke.img" /> -->
@@ -80,7 +80,7 @@
     <input type="text" name="task" placeholder="vehicle" [(ngModel)]="edit.vehicle" />
 
 
-    <button (click)="saveEdit()" class="btn btn-primary">save</button>
+    <button (click)="updateFuelTracker()" class="btn btn-primary">save</button>
     <button (click)='this.selected = null'>Go Back</button>
   </form>
   <button (click)="edit = null; selected= null;"></button>

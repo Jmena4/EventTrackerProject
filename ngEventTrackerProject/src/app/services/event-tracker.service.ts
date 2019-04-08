@@ -50,20 +50,20 @@ export class EventTrackerService {
   }
 
 
-  // public update(fuelTrackers: FuelTracker) {
-  //   if (fuelTrackers != null) {
-  //     fuelTrackers.date = this.datePipe.transform(Date.now(), 'shortDate');
-  //   } else {
-  //     fuelTrackers.date = '';
-  //   }
-  //   console.log('completeDate: ' + fuelTrackers.date);
-  //   const httpOptions = { headers: { 'Content-type': 'application/json' } };
-  //   return this.http.put<FuelTracker>(`${this.url}/${fuelTrackers.id}`, fuelTrackers, httpOptions).pipe(
-  //     catchError((err: any) => {
-  //       console.error('TodoService.update(): Error');
-  //       console.error(err);
-  //       return throwError('Error in TodoService.update()');
-  //     })
-  //   );
-  // }
+  public update(fuelTrackers: FuelTracker) {
+    // if (fuelTrackers != null) {
+    //   fuelTrackers.date = this.datePipe.transform(Date.now(), 'shortDate');
+    // } else {
+    //   fuelTrackers.date = '';
+    // }
+    console.log('fuelTrackers.id: ' + fuelTrackers.id);
+    const httpOptions = { headers: { 'Content-type': 'application/json' } };
+    return this.http.put<FuelTracker>(`${this.url}/${fuelTrackers.id}`, fuelTrackers, httpOptions).pipe(
+      catchError((err: any) => {
+        console.error('FuelTrackerService.update(): Error');
+        console.error(err);
+        return throwError('Error in FuelTrackerService.update()');
+      })
+    );
+  }
 }

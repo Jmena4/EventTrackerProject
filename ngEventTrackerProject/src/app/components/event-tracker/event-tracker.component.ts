@@ -18,7 +18,7 @@ export class EventTrackerComponent implements OnInit {
   mode = 'list';
   selectedType = 'all';
   selectedFuelTracker = null;
-  editTodo: FuelTracker = null;
+  editFuelTracker: FuelTracker = null;
   showAllFuelTrackers = false;
   // newFuelTracker: FuelTracker = new FuelTracker();
 
@@ -104,19 +104,19 @@ export class EventTrackerComponent implements OnInit {
       }
     );
   }
-  // updateTodo(fuelTrackers: FuelTracker): void {
-  //   // this.todoService.update(this.editTodo);
-  //   // this.todos = this.todoService.index();
-  //   this.eventTrackerService.update(fuelTrackers).subscribe(
-  //     data => {
-  //       this.reload();
-  //       this.editTodo = null;
-  //       this.selected = data;
-  //     },
-  //     err => {
-  //       console.error('EventTrackerComponent.updateTodo(): Error');
-  //       console.error(err);
-  //     }
-  //   );
-  // }
+  updateFuelTracker(fuelTrackers: FuelTracker): void {
+    // this.todoService.update(this.editTodo);
+    // this.todos = this.todoService.index();
+    this.eventTrackerService.update(fuelTrackers).subscribe(
+      data => {
+        this.reload();
+        this.editFuelTracker = null;
+        this.selected = data;
+      },
+      err => {
+        console.error('EventTrackerComponent.updateTodo(): Error');
+        console.error(err);
+      }
+    );
+  }
 }
