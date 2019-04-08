@@ -111,7 +111,7 @@ CRUD functionality are now accessible using a Javascript supported Front-end Use
 
 For the aggregation the calculation of Estimated Mile / Gallons is integrated into the data table.
 
-### Angular Front-end Integration- WEEk 3 weekend additions
+### Angular Front-end Integration- WEEK 3 weekend additions
 
 ### Learning Objectives
 Configure an Angular application Use:
