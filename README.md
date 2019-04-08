@@ -95,4 +95,6 @@ CRUD functionality are now accessible using a Javascript supported Front-end Use
 
 * Deletion of a Fuel Tracker Entry: Two different switch actions exist. Simply press the delete button next to any row to delete an entry. The Alternative methods is to type a specific Fuel Tracker entry id number into the Delete input field.
 
+For the aggregration the calculation of Estimated Mile / Gallons is integrated into the data table.
+
 ### Angular Front-end Integration- WEEk 3 weekend additions
