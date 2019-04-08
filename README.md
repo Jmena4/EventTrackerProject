@@ -85,7 +85,7 @@ To test the api mapping copy the top link to the AWS-EC2 site. Next, in a Postma
         "model": "Xterra Pro-4x"
     }`
 
-### Javascipt Integration
+### Javascipt Integration- WEEK 2 weekend additions
 CRUD functionality are now accessible using a Javascript supported Front-end User Interface. 
 * The page when initiated will load the entire database history of All the FuelTracker Entries available for a specific User. In the project the User has 2 vehicles. 
 
@@ -94,3 +94,5 @@ CRUD functionality are now accessible using a Javascript supported Front-end Use
 * Editing an Fuel Tracker Entry: Each of the rows contains an edit button. Clicking on the button will populate the information for each of the database elements. Dynamically change the values and press the press the "Save Fuel Tracker Entry" to register the modifications. 
 
 * Deletion of a Fuel Tracker Entry: Two different switch actions exist. Simply press the delete button next to any row to delete an entry. The Alternative methods is to type a specific Fuel Tracker entry id number into the Delete input field.
+
+### Angular Front-end Integration- WEEk 3 weekend additions
