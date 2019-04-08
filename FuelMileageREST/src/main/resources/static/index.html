@@ -10,23 +10,14 @@
 <body>
 	<h1>Welcome to REST Fuel Tracker</h1>
 
-	<form name="fuelTrackerForm">
+	<!-- <form name="fuelTrackerForm">
 		<input type="number" name="fuelTrackerId">
 		<button name="lookup">Get Fuel Tracker Entry By Id</button>
-	</form>
-	<div id="output">
-		<div id="fuelTrackerData">
-			<button name="edit" id='editFuelEntry'>Edit</button>
-			<button id='deleteFuelEntry' onclick="remove_update(event)">Remove</button>
-		</div>
-		<div id="vehicleData"></div>
-	</div>
-
-	<hr>
+	</form> -->
 	<div id='addFuelTrackerDiv'>
 		<form name='addFuelTrackerForm'>
 			<!-- Date: <input name='date' type='text'> <br> -->
-			Id: <input name='id' type='number'> <br> 
+			<!-- Id: <input name='id' type='number'> <br>  -->
 			Gallons: <input	name='gallons' type='text'> <br> 
 			Price/Gallon: <input name='pricePerGallon' type='number'> <br> 
 			Total Purchase Price: <input name='totalPrice' type='number'> <br>
@@ -37,6 +28,15 @@
 		</form>
 	</div>
 	<hr>
+	<div id="output">
+		<div id="fuelTrackerData">
+			<button name="edit" id='editFuelEntry'>Edit</button>
+			<button id='deleteFuelEntry' onclick="remove_update(event)">Remove</button>
+		</div>
+		<div id="vehicleData"></div>
+	</div>
+
+	<hr>
 	<div>
 		<form name='deleteFuelTrackerForm'>
 			<input type="number" name="fuelTrackerId">
@@ -44,6 +44,7 @@
 				Id</button>
 		</form>
 	</div>
+	<hr>
 		<div id='editFuelTrackerDiv'>
 		<form name='editFuelTrackerForm'>
 			Id: <input id="editId" name='id' type='number'> <br> 
