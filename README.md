@@ -93,7 +93,7 @@ You are embarking on a weekend project that you may or may not come back to afte
 
 This weekend we will be building out the front end for this application using Javascript.
 
-## Learning Objectives
+### Learning Objectives
 * Adding scripts to a web application
 * Send asynchronous requests to Java controllers with JavaScript's `XMLHttpRequest
 * Consume and parse JSON responses with JavaScript
