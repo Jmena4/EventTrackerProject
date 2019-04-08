@@ -5,6 +5,7 @@ import { catchError, tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { FuelTracker } from '../models/fuel-tracker';
 import { DatePipe } from '@angular/common';
+import { NgForm } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -27,10 +28,10 @@ export class EventTrackerService {
   }
 
 
-  public create(fuelTrackers: FuelTracker) {
-    console.log(fuelTrackers);
+  public create(tracker: FuelTracker) {
+    console.log(tracker);
     const httpOptions = { headers: { 'Content-type': 'application/json' } };
-    return this.http.post<FuelTracker>(this.url, fuelTrackers, httpOptions).pipe(
+    return this.http.post<FuelTracker>(this.url, tracker, httpOptions).pipe(
       catchError((err: any) => {
         console.error('FuelTrackerService.create(): Error');
         console.error(err);
@@ -50,20 +51,20 @@ export class EventTrackerService {
   }
 
 
-  public update(fuelTrackers: FuelTracker) {
-    // if (fuelTrackers != null) {
-    //   fuelTrackers.date = this.datePipe.transform(Date.now(), 'shortDate');
-    // } else {
-    //   fuelTrackers.date = '';
-    // }
-    console.log('fuelTrackers.id: ' + fuelTrackers.id);
-    const httpOptions = { headers: { 'Content-type': 'application/json' } };
-    return this.http.put<FuelTracker>(`${this.url}/${fuelTrackers.id}`, fuelTrackers, httpOptions).pipe(
-      catchError((err: any) => {
-        console.error('FuelTrackerService.update(): Error');
-        console.error(err);
-        return throwError('Error in FuelTrackerService.update()');
-      })
-    );
-  }
+  // public update(fuelTrackers: FuelTracker) {
+  //   // if (fuelTrackers != null) {
+  //   //   fuelTrackers.date = this.datePipe.transform(Date.now(), 'shortDate');
+  //   // } else {
+  //   //   fuelTrackers.date = '';
+  //   // }
+  //   console.log('fuelTrackers.id: ' + fuelTrackers.id);
+  //   const httpOptions = { headers: { 'Content-type': 'application/json' } };
+  //   return this.http.put<FuelTracker>(`${this.url}/${fuelTrackers.id}`, fuelTrackers, httpOptions).pipe(
+  //     catchError((err: any) => {
+  //       console.error('FuelTrackerService.update(): Error');
+  //       console.error(err);
+  //       return throwError('Error in FuelTrackerService.update()');
+  //     })
+  //   );
+  // }
 }

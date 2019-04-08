@@ -1,6 +1,7 @@
 import { EventTrackerService } from './../../services/event-tracker.service';
 import { FuelTracker } from './../../models/fuel-tracker';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-event-tracker',
@@ -61,13 +62,20 @@ export class EventTrackerComponent implements OnInit {
   setSelected(fuelTrackers) {
     this.selected = fuelTrackers;
   }
-  addFuelTracker(fuelTrackers: FuelTracker) {
+  addFuelTracker(form: NgForm) {
     // todo.id = this.generateId();
     // this.todoService.create(todo);
     // this.todos = this.todoService.index();
+    console.log('addFuelTRacker()');
+    console.log(form.value);
+    const tracker = form.value;
+    tracker.vehicle = { id: tracker.vehicleId };
 
-    this.eventTrackerService.create(fuelTrackers).subscribe(
+    this.eventTrackerService.create(tracker).subscribe(
       data => {
+        console.log('addFuelTracker(): tracker created');
+        console.log(data);
+
         this.reload();
       },
       err => {
@@ -104,19 +112,24 @@ export class EventTrackerComponent implements OnInit {
       }
     );
   }
-  updateFuelTracker(fuelTrackers: FuelTracker): void {
-    // this.todoService.update(this.editTodo);
-    // this.todos = this.todoService.index();
-    this.eventTrackerService.update(fuelTrackers).subscribe(
-      data => {
-        this.reload();
-        this.editFuelTracker = null;
-        this.selected = data;
-      },
-      err => {
-        console.error('EventTrackerComponent.updateTodo(): Error');
-        console.error(err);
-      }
-    );
-  }
+  // updateFuelTracker(form: NgForm): void {
+  //   // this.todoService.update(this.editTodo);
+  //   // this.todos = this.todoService.index();
+  //   console.log('updateFuelTracker()');
+  //   console.log(form.value);
+  //   const tracker = form.value;
+  //   tracker.vehicle = { id: tracker.vehicleId };
+
+  //   this.eventTrackerService.update(tracker).subscribe(
+  //     data => {
+  //       this.reload();
+  //       this.editFuelTracker = null;
+  //       this.selected = data;
+  //     },
+  //     err => {
+  //       console.error('EventTrackerComponent.updateTodo(): Error');
+  //       console.error(err);
+  //     }
+  //   );
+  // }
 }
