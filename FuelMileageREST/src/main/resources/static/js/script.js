@@ -152,6 +152,10 @@ function displayFuelTrackerList(fuelTracker) {
 	cell = document.createElement("th");
 	cell.textContent = "Vehicle Id #:";
 	row.appendChild(cell);
+	
+	cell = document.createElement("th");
+	cell.textContent = "Cost Per Estimated Mile ";
+	row.appendChild(cell);
 
 	// cell = document.createElement("th");
 	// cell.textContent = "Vehicle Make:";
@@ -205,6 +209,10 @@ function displayFuelTrackerList(fuelTracker) {
 		cell = document.createElement("td");
 		cell.textContent = fuelTracker[i].vehicle.id;
 		row.appendChild(cell);
+		
+		cell = document.createElement("td");
+		cell.textContent = ((fuelTracker[i].totalPrice)/fuelTracker[i].estimatedMiles);
+		row.appendChild(cell);
 
 		// cell = document.createElement("td");
 		// cell.textContent = fuelTracker[i].vehicle.make;
@@ -229,7 +237,7 @@ function displayFuelTrackerList(fuelTracker) {
 			let i = e.target.id.substring(4);
 			document.editFuelTrackerForm.editId.value = i;
 			// console.log(i);
-			let vehicle = e.target.previousSibling;
+			let vehicle = e.target.previousSibling.previousSibling;
 			document.editFuelTrackerForm.vehicle.value = vehicle.textContent;
 			//			
 			// let odometer =
