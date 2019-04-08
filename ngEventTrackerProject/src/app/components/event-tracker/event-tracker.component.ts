@@ -12,6 +12,7 @@ export class EventTrackerComponent implements OnInit {
   fueltrackers: FuelTracker[] = [];
   selected: FuelTracker = null;
   edit: FuelTracker = null;
+  add: FuelTracker = null;
   delete: FuelTracker = null;
   // add: FuelTracker = new FuelTracker();
   mode = 'list';
@@ -34,7 +35,7 @@ export class EventTrackerComponent implements OnInit {
   reload() {
     // const myObservable = this.eventTrackerService.index();
     // myObservable.subscribe(
-      this.eventTrackerService.index().subscribe(
+    this.eventTrackerService.index().subscribe(
       data => {
         this.fueltrackers = data;
       },
@@ -47,9 +48,15 @@ export class EventTrackerComponent implements OnInit {
   displayTable(): void {
     this.selected = null;
   }
-  // setEditTodo() {
-  //   this.edit = Object.assign({}, this.selected);
-  // }
+
+  setEditFuelTracker() {
+    this.edit = Object.assign({}, this.selected);
+  }
+
+  setAddFuelTracker() {
+    this.add = Object.assign({}, this.selected);
+  }
+
 
   setSelected(fuelTrackers) {
     this.selected = fuelTrackers;
@@ -58,15 +65,17 @@ export class EventTrackerComponent implements OnInit {
     // todo.id = this.generateId();
     // this.todoService.create(todo);
     // this.todos = this.todoService.index();
+
     this.eventTrackerService.create(fuelTrackers).subscribe(
       data => {
         this.reload();
       },
       err => {
-        console.error('EventTrackerComponent.addTodo(): Error');
+        console.error('EventTrackerComponent.addFuelTracker(): Error');
         console.error(err);
       }
     );
+    this.selected = null;
     // this.newFuelTracker = new FuelTracker();
   }
 
