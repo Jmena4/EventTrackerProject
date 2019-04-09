@@ -1,64 +1,13 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">	
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Fuel Tracker App</title>
-<script type="text/javascript" src="js/script.js"></script>
-
-</head>
+  <meta charset="utf-8">
+  <title>NgEventTrackerProject</title>
+  <base href="/FuelMileageREST/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="stylesheet" href="styles.11c8b686fff55d32d566.css"></head>
 <body>
-	<h1>Welcome to REST Fuel Tracker</h1>
-
-	 <form name="fuelTrackerForm">
-		<input type="number" name="fuelTrackerId">
-		<button name="lookup">Get Fuel Tracker Entry By Id</button>
-	</form>
-	<div id='addFuelTrackerDiv'>
-		<form name='addFuelTrackerForm'>
-			<!-- Date: <input name='date' type='text'> <br> -->
-			<!-- Id: <input name='id' type='number'> <br>  -->
-			Gallons: <input	name='gallons' type='text'> <br> 
-			Price/Gallon: <input name='pricePerGallon' type='number'> <br> 
-			Total Purchase Price: <input name='totalPrice' type='number'> <br>
-			Estimated Miles:<input name='estimatedMiles' type='text'> <br>
-			Odometer Reading: <input name='odometerReading' type='text'>
-			<br> Vehicle Id: <input name='vehicle' type='number'> <br>
-			<button id='addFuelTracker'>Add Fuel Tracker Entry</button>
-		</form>
-	</div>
-	<hr>
-	<div id="output">
-		<div id="fuelTrackerData">
-			<button name="edit" id='editFuelEntry'>Edit</button>
-			<button id='deleteFuelEntry' onclick="remove_update(event)">Remove</button>
-		</div>
-		<div id="vehicleData"></div>
-	</div>
-
-	<hr>
-	<div>
-		<form name='deleteFuelTrackerForm'>
-			<input type="number" name="fuelTrackerId">
-			<button id='deleteFuelTracker'>Delete Fuel Tracker Entry by
-				Id</button>
-		</form>
-	</div>
-	<hr>
-		<div id='editFuelTrackerDiv'>
-		<form name='editFuelTrackerForm'>
-			Id: <input id="editId" name='id' type='number'> <br> 
-			Gallons: <input	id="editGallons" name='gallons' type='text'> <br> 
-			Price/Gallon: <input id="editPricePerGallons" name='pricePerGallon' type='number'> <br> 
-			Total Purchase Price: <input id="editTotalPurchasePrice" name='totalPrice' type='number'> <br>
-			Estimated Miles:<input id="editEstimatedMiles" name='estimatedMiles' type='text'> <br>
-			Odometer Reading: <input id="editOdometerReading" name='odometerReading' type='text'>
-			<br> Vehicle ID: <input id="editVehicle" name='vehicle' type='number'> <br>
-			<button id='editFuelTracker'>Save Fuel Tracker Entry</button>
-		</form>
-	</div>
-</body>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <app-root></app-root>
+<script type="text/javascript" src="runtime.26209474bfa8dc87a77c.js"></script><script type="text/javascript" src="es2015-polyfills.c5dd28b362270c767b34.js" nomodule></script><script type="text/javascript" src="polyfills.8bbb231b43165d65d357.js"></script><script type="text/javascript" src="main.2a31ec3085b2cea73284.js"></script></body>
 </html>

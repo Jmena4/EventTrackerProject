@@ -6,14 +6,16 @@ import { HttpClient } from '@angular/common/http';
 import { FuelTracker } from '../models/fuel-tracker';
 import { DatePipe } from '@angular/common';
 import { NgForm } from '@angular/forms';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EventTrackerService {
 
-  private baseUrl = 'http://localhost:8085';
-  private url = this.baseUrl + '/api/fuelTrackers';
+  // private baseUrl = 'http://localhost:8085/';
+  private baseUrl = environment.baseUrl;
+  private url = this.baseUrl + 'api/fuelTrackers/';
   //  C o n s t r u c t o r
   constructor(private http: HttpClient, private datePipe: DatePipe) { }
 
@@ -51,20 +53,16 @@ export class EventTrackerService {
   }
 
 
-  // public update(fuelTrackers: FuelTracker) {
-  //   // if (fuelTrackers != null) {
-  //   //   fuelTrackers.date = this.datePipe.transform(Date.now(), 'shortDate');
-  //   // } else {
-  //   //   fuelTrackers.date = '';
-  //   // }
-  //   console.log('fuelTrackers.id: ' + fuelTrackers.id);
-  //   const httpOptions = { headers: { 'Content-type': 'application/json' } };
-  //   return this.http.put<FuelTracker>(`${this.url}/${fuelTrackers.id}`, fuelTrackers, httpOptions).pipe(
-  //     catchError((err: any) => {
-  //       console.error('FuelTrackerService.update(): Error');
-  //       console.error(err);
-  //       return throwError('Error in FuelTrackerService.update()');
-  //     })
-  //   );
-  // }
+  public update(tracker: FuelTracker) {
+    console.log('tracker: ' + tracker);
+    console.log('tracker.id: ' + tracker.id);
+    const httpOptions = { headers: { 'Content-type': 'application/json' } };
+    return this.http.put<FuelTracker>(`${this.url}/${tracker.id}`, tracker, httpOptions).pipe(
+      catchError((err: any) => {
+        console.error('FuelTrackerService.update(): Error');
+        console.error(err);
+        return throwError('Error in FuelTrackerService.update()');
+      })
+    );
+  }
 }

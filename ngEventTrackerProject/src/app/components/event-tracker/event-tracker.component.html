@@ -1,5 +1,6 @@
 <!-- <span *ngFor="let type of fueltrackers" (click)="selectedType = type">{{fueltrackers}} | </span> -->
-<div #addFuelTrackerForm *ngIf="add && !listFuelTrackerForm">
+<!-- <div #addFuelTrackerForm *ngIf="add && !listFuelTrackerForm"> -->
+<div #addFuelTrackerForm *ngIf="add ">
     <h3> Add </h3>
     <form  #addForm="ngForm">
     <input type="number" name="gallons" placeholder="Gallons" ngModel/>
@@ -23,7 +24,8 @@
         <th>Total Purchase Price:</th>
         <th>Estimated Miles:</th>
         <th>Odometer Reading:</th>
-        <th>Vehicle :</th>
+        <th>Vehicle:</th>
+        <th>Cost Per Estimated Mile:</th>
 
         <button (click)="setAddFuelTracker(fueltrackers )" class="btn btn-primary">Add New Fuel Entry:</button>
 
@@ -31,9 +33,9 @@
     </thead>
     <hr>
     <tbody>
-      <tr *ngFor="let fuelTracker of fueltrackers " (click)="selectedFuelTracker = fuelTracker; mode = 'detail'">
+      <tr *ngFor="let fuelTracker of fueltrackers " (click)="setSelected(fuelTracker)" (click)="selectedFuelTracker = fuelTracker; mode = 'detail'">
         <!-- <tr *ngFor="let fuelTracker of fueltrackers " > -->
-        <td (click)="setSelected(fuelTracker)">{{ fuelTracker.id }}</td>
+        <td >{{ fuelTracker.id }}</td>
         <td>{{ fuelTracker.gallons }}</td>
         <td>{{ fuelTracker.date }}</td>
         <td>{{ fuelTracker.pricePerGallon }}</td>
@@ -41,6 +43,7 @@
         <td>{{ fuelTracker.estimatedMiles }}</td>
         <td>{{ fuelTracker.odometerReading }}</td>
         <td>{{ fuelTracker.vehicle["id"] | json}} </td>
+        <td>{{ fuelTracker.vehicle["id"]/fuelTracker.estimatedMiles | json}} </td>
 
         <td>
           <!-- <img [src]="poke.img" /> -->
@@ -69,18 +72,19 @@
 </div>
 
 <!-- <div #updateFuelTrackerForm *ngIf="mode === 'detail' && !selectedFuelTracker"> -->
-<div #updateFuelTrackerForm *ngIf="edit  ">
+<div #updateFuelTrackerForm *ngIf="edit && !detail">
   <h3>Edit</h3>
-  <form #editForm="ngForm">
-    <input type="number" name="task" placeholder="gallons" [(ngModel)]="edit.gallons" />
-    <input type="number" name="task" placeholder="pricePerGallon" [(ngModel)]="edit.pricePerGallon" />
-    <input type="number" name="task" placeholder="totalPrice" [(ngModel)]="edit.totalPrice" />
-    <input type="number" name="task" placeholder="estimatedMiles" [(ngModel)]="edit.estimatedMiles" />
-    <input type="number" name="task" placeholder="odometerReading" [(ngModel)]="edit.odometerReading" />
-    <input type="number" name="task" placeholder="vehicle" [(ngModel)]="edit.vehicle" />
+  <form >
+    <input type="hidden" name="id" placeholder="id" [(ngModel)]="edit.id" />
+    <input type="number" name="gallons" placeholder="gallons" [(ngModel)]="edit.gallons" />
+    <input type="number" name="pricePerGallon" placeholder="pricePerGallon" [(ngModel)]="edit.pricePerGallon" />
+    <input type="number" name="totalPrice" placeholder="totalPrice" [(ngModel)]="edit.totalPrice" />
+    <input type="number" name="estimatedMiles" placeholder="estimatedMiles" [(ngModel)]="edit.estimatedMiles" />
+    <input type="number" name="odometerReading" placeholder="odometerReading" [(ngModel)]="edit.odometerReading" />
+    <input type="number" name="vehicle" placeholder="vehicle" [(ngModel)]="edit.vehicle" />
 
 
-    <button (click)="updateFuelTracker(editForm)" class="btn btn-primary">save</button>
+    <button (click)="updateFuelTracker()" class="btn btn-primary">save</button>
     <button (click)='this.selected = null'>Go Back</button>
   </form>
   <button (click)="edit = null; selected= null;"></button>

@@ -12,7 +12,7 @@ export class EventTrackerComponent implements OnInit {
 
   fueltrackers: FuelTracker[] = [];
   selected: FuelTracker = null;
-  edit: FuelTracker = null;
+  edit: FuelTracker;
   add: FuelTracker = null;
   delete: FuelTracker = null;
   // add: FuelTracker = new FuelTracker();
@@ -84,7 +84,7 @@ export class EventTrackerComponent implements OnInit {
       }
     );
     this.selected = null;
-    // this.newFuelTracker = new FuelTracker();
+    // this.newFuelTracker: FuelTracker = new FuelTracker();
   }
 
   saveEdit() {
@@ -112,24 +112,26 @@ export class EventTrackerComponent implements OnInit {
       }
     );
   }
-  // updateFuelTracker(form: NgForm): void {
-  //   // this.todoService.update(this.editTodo);
-  //   // this.todos = this.todoService.index();
-  //   console.log('updateFuelTracker()');
-  //   console.log(form.value);
-  //   const tracker = form.value;
-  //   tracker.vehicle = { id: tracker.vehicleId };
+  updateFuelTracker(): void {
+    // this.todoService.update(this.editTodo);
+    // this.todos = this.todoService.index();
+    console.log('updateFuelTracker()');
+    console.log(this.edit.vehicle);
 
-  //   this.eventTrackerService.update(tracker).subscribe(
-  //     data => {
-  //       this.reload();
-  //       this.editFuelTracker = null;
-  //       this.selected = data;
-  //     },
-  //     err => {
-  //       console.error('EventTrackerComponent.updateTodo(): Error');
-  //       console.error(err);
-  //     }
-  //   );
-  // }
+    // const tracker = edit;
+    this.edit.vehicle = { id: this.edit.vehicle };
+
+    console.log(this.edit.vehicle);
+    this.eventTrackerService.update(this.edit).subscribe(
+      data => {
+        this.reload();
+        this.edit = null;
+        this.selected = data;
+      },
+      err => {
+        console.error('EventTrackerComponent.updateTodo(): Error');
+        console.error(err);
+      }
+    );
+  }
 }
