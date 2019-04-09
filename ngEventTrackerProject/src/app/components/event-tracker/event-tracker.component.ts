@@ -2,6 +2,7 @@ import { EventTrackerService } from './../../services/event-tracker.service';
 import { FuelTracker } from './../../models/fuel-tracker';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { resetCompiledComponents } from '@angular/core/src/render3/jit/module';
 
 @Component({
   selector: 'app-event-tracker',
@@ -84,7 +85,8 @@ export class EventTrackerComponent implements OnInit {
       }
     );
     this.selected = null;
-    // this.newFuelTracker: FuelTracker = new FuelTracker();
+    this.add = null;
+    form.reset();
   }
 
   saveEdit() {
@@ -104,13 +106,13 @@ export class EventTrackerComponent implements OnInit {
     // this.todos = this.todoService.index();
     this.eventTrackerService.destroy(fuelTrackers.id).subscribe(
       data => {
-        this.reload();
       },
       err => {
         console.error('EventTrackerComponent.deleteTodo(): Error');
         console.error(err);
       }
     );
+    this.reload();
   }
   updateFuelTracker(): void {
     // this.todoService.update(this.editTodo);
@@ -124,14 +126,17 @@ export class EventTrackerComponent implements OnInit {
     console.log(this.edit.vehicle);
     this.eventTrackerService.update(this.edit).subscribe(
       data => {
-        this.reload();
-        this.edit = null;
         this.selected = data;
+        this.selectedFuelTracker = null;
       },
       err => {
         console.error('EventTrackerComponent.updateTodo(): Error');
         console.error(err);
       }
     );
+
+    this.edit = null;
+    this.reload();
+
   }
 }
