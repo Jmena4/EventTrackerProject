@@ -127,7 +127,7 @@ export class EventTrackerComponent implements OnInit {
     this.eventTrackerService.update(this.edit).subscribe(
       data => {
         this.selected = data;
-        this.selectedFuelTracker = null;
+
       },
       err => {
         console.error('EventTrackerComponent.updateTodo(): Error');

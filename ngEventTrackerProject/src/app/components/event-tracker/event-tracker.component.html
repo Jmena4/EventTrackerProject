@@ -72,7 +72,7 @@
 </div>
 
 <!-- <div #updateFuelTrackerForm *ngIf="mode === 'detail' && !selectedFuelTracker"> -->
-<div #updateFuelTrackerForm *ngIf="edit && !detail">
+<div #updateFuelTrackerForm *ngIf="edit">
   <h3>Edit</h3>
   <form >
     <input type="hidden" name="id" placeholder="id" [(ngModel)]="edit.id" />
